@@ -2,7 +2,8 @@
 // Created by Boguste Hameyie on 11/21/20.
 //
 
-#include "Yello.h"
+#include <receiptservice/Yello.hpp>
+
 int meh(int d){
-    return d*2;
+    return d*5;
 }
