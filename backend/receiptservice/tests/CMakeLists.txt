@@ -6,8 +6,7 @@
 ################################
 # GTest
 ################################
-#project(googletest-git NONE)
-project(chatservertesting)
+project(googletest-git NONE)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -25,14 +24,7 @@ FetchContent_MakeAvailable(googletest)
 ################################
 # Tests
 ################################
-
-
 # Add test cpp file
-add_executable(testlib testgtest.cpp)
-
-target_compile_features(testlib PRIVATE cxx_std_17)
-
+add_executable(${RECEIPTSERVICETESTNAME} testgtest.cpp)
 # Link test executable against gtest & gtest_main
-target_link_libraries(testlib PRIVATE chatserverlib gtest gtest_main)
-
-add_test(NAME testlibtest COMMAND testlib) # Command can be a target
+target_link_libraries(${RECEIPTSERVICETESTNAME} gtest gtest_main)
