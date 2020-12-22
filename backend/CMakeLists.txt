@@ -4,4 +4,4 @@ set(CMAKE_CXX_STANDARD 17)
 project(backend)
 
 add_subdirectory(chatserver)
-add_subdirectory(receiptservice)
+add_subdirectory(presenceservice)

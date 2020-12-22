@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package presence;
+
+enum ConnectionStatus{
+  UNDETERMINED = 0;
+  CONNECTED = 1;
+  AWAY = 2;
+  DISCONNECTED = 3;
+}
+
+message UpdateUserConnectionRequest{
+  string device_id = 1;
+  string user_id = 2;
+  ConnectionStatus status = 3;
+  int64 last_seen_timestamp = 4;
+}
+
+message UpdateUserConnectionReply{
+  string user_id = 1;
+  ConnectionStatus status = 2;
+}
+
+service PresenceRecorder {
+  rpc UpdateStatus(UpdateUserConnectionRequest) returns (UpdateUserConnectionReply) {}
+}
