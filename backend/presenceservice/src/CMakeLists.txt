@@ -1,9 +1,7 @@
 
 cmake_minimum_required(VERSION 3.17)
 
-project(presenceservicelib)
-
-set(CMAKE_CXX_STANDARD 17)
+project(presenceservicelib C CXX)
 
 get_filename_component(PARENT_DIR ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY)
 get_filename_component(PARENT_DIR ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY)
