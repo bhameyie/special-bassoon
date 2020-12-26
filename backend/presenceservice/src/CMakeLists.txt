@@ -27,7 +27,7 @@ add_custom_command(
 
 include_directories("gen")
 
-add_library(presenceservicelib presence_cache.cpp Yello.cpp presence_retriever.cpp presence_server.cpp service_runner.cpp service_models.h presence_cache.h   ${hw_proto_srcs} ${hw_grpc_srcs})
+add_library(presenceservicelib presence_cache.cpp Yello.cpp presence_retriever.cpp presence_recorder.cpp service_runner.cpp service_models.h presence_cache.h   ${hw_proto_srcs} ${hw_grpc_srcs})
 
 target_link_libraries(presenceservicelib PRIVATE Boost::boost
         ${_REFLECTION}

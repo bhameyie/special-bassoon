@@ -7,7 +7,7 @@
 #include <grpcpp/health_check_service_interface.h>
 #include <grpcpp/ext/proto_server_reflection_plugin.h>
 
-#include "presence_server.cpp"
+#include "presence_recorder.cpp"
 #include "presence_retriever.cpp"
 #include "presence_cache.cpp"
 
