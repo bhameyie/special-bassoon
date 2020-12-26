@@ -15,7 +15,7 @@ cmake_policy(SET CMP0079 NEW)
 ################################
 include(GoogleTest)# Add test cpp file
 
-add_executable(presenceservicetest testgtest.cpp  )
+add_executable(presenceservicetest testgtest.cpp presence_cache_tests  )
 
 target_compile_features(presenceservicetest PRIVATE cxx_std_17)
 
