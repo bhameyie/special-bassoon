@@ -8,6 +8,7 @@
 #include <grpcpp/ext/proto_server_reflection_plugin.h>
 
 #include "presence_server.cpp"
+#include "presence_retriever.cpp"
 #include "presence_cache.cpp"
 
 using namespace std;
@@ -24,8 +25,9 @@ public:
 
     std::unique_ptr<Server> Run()
     {
-        auto cache = std::make_unique<PresenceCacheImpl>();
-        PresenceRecorderImpl presence_recorder(std::move(cache));
+        auto cache = std::make_shared<PresenceCacheImpl>();
+        PresenceRecorderImpl presence_recorder(cache);
+        PresenceRetrieverImpl presence_retriever(cache);
 
         grpc::EnableDefaultHealthCheckService(true);
         grpc::reflection::InitProtoReflectionServerBuilderPlugin();
@@ -36,6 +38,7 @@ public:
         // Register "service" as the instance through which we'll communicate with
         // clients. In this case it corresponds to an *synchronous* service.
         builder.RegisterService(&presence_recorder);
+        builder.RegisterService(&presence_retriever);
         // Finally assemble the server.
         std::unique_ptr<Server> server(builder.BuildAndStart());
         std::cout << "Server listening on " << server_address_ << std::endl;

@@ -14,7 +14,12 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_presence_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PresenceModel_presence_2eproto;
 namespace presence {
+class PresenceModelDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PresenceModel> _instance;
+} _PresenceModel_default_instance_;
 class UpdateUserConnectionRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateUserConnectionRequest> _instance;
@@ -23,7 +28,95 @@ class UpdateUserConnectionReplyDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateUserConnectionReply> _instance;
 } _UpdateUserConnectionReply_default_instance_;
+class RetrieveUserPresenceByDeviceRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RetrieveUserPresenceByDeviceRequest> _instance;
+} _RetrieveUserPresenceByDeviceRequest_default_instance_;
+class RetrieveUserPresenceByDeviceResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RetrieveUserPresenceByDeviceResponse> _instance;
+} _RetrieveUserPresenceByDeviceResponse_default_instance_;
+class RetrieveUserPresenceByIdRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RetrieveUserPresenceByIdRequest> _instance;
+} _RetrieveUserPresenceByIdRequest_default_instance_;
+class RetrieveUserPresenceByIdResponceDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RetrieveUserPresenceByIdResponce> _instance;
+} _RetrieveUserPresenceByIdResponce_default_instance_;
 }  // namespace presence
+static void InitDefaultsscc_info_PresenceModel_presence_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::presence::_PresenceModel_default_instance_;
+    new (ptr) ::presence::PresenceModel();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::presence::PresenceModel::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PresenceModel_presence_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PresenceModel_presence_2eproto}, {}};
+
+static void InitDefaultsscc_info_RetrieveUserPresenceByDeviceRequest_presence_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::presence::_RetrieveUserPresenceByDeviceRequest_default_instance_;
+    new (ptr) ::presence::RetrieveUserPresenceByDeviceRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::presence::RetrieveUserPresenceByDeviceRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RetrieveUserPresenceByDeviceRequest_presence_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RetrieveUserPresenceByDeviceRequest_presence_2eproto}, {}};
+
+static void InitDefaultsscc_info_RetrieveUserPresenceByDeviceResponse_presence_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::presence::_RetrieveUserPresenceByDeviceResponse_default_instance_;
+    new (ptr) ::presence::RetrieveUserPresenceByDeviceResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::presence::RetrieveUserPresenceByDeviceResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_RetrieveUserPresenceByDeviceResponse_presence_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_RetrieveUserPresenceByDeviceResponse_presence_2eproto}, {
+      &scc_info_PresenceModel_presence_2eproto.base,}};
+
+static void InitDefaultsscc_info_RetrieveUserPresenceByIdRequest_presence_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::presence::_RetrieveUserPresenceByIdRequest_default_instance_;
+    new (ptr) ::presence::RetrieveUserPresenceByIdRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::presence::RetrieveUserPresenceByIdRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RetrieveUserPresenceByIdRequest_presence_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RetrieveUserPresenceByIdRequest_presence_2eproto}, {}};
+
+static void InitDefaultsscc_info_RetrieveUserPresenceByIdResponce_presence_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::presence::_RetrieveUserPresenceByIdResponce_default_instance_;
+    new (ptr) ::presence::RetrieveUserPresenceByIdResponce();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::presence::RetrieveUserPresenceByIdResponce::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_RetrieveUserPresenceByIdResponce_presence_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_RetrieveUserPresenceByIdResponce_presence_2eproto}, {
+      &scc_info_PresenceModel_presence_2eproto.base,}};
+
 static void InitDefaultsscc_info_UpdateUserConnectionReply_presence_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -52,11 +145,20 @@ static void InitDefaultsscc_info_UpdateUserConnectionRequest_presence_2eproto() 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateUserConnectionRequest_presence_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateUserConnectionRequest_presence_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_presence_2eproto[2];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_presence_2eproto[7];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_presence_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_presence_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_presence_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::presence::PresenceModel, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::presence::PresenceModel, user_id_),
+  PROTOBUF_FIELD_OFFSET(::presence::PresenceModel, device_id_),
+  PROTOBUF_FIELD_OFFSET(::presence::PresenceModel, status_),
+  PROTOBUF_FIELD_OFFSET(::presence::PresenceModel, last_seen_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::presence::UpdateUserConnectionRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -73,43 +175,104 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_presence_2eproto::offsets[] PR
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::presence::UpdateUserConnectionReply, user_id_),
   PROTOBUF_FIELD_OFFSET(::presence::UpdateUserConnectionReply, status_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::presence::RetrieveUserPresenceByDeviceRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::presence::RetrieveUserPresenceByDeviceRequest, user_id_),
+  PROTOBUF_FIELD_OFFSET(::presence::RetrieveUserPresenceByDeviceRequest, device_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::presence::RetrieveUserPresenceByDeviceResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::presence::RetrieveUserPresenceByDeviceResponse, model_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::presence::RetrieveUserPresenceByIdRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::presence::RetrieveUserPresenceByIdRequest, user_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::presence::RetrieveUserPresenceByIdResponce, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::presence::RetrieveUserPresenceByIdResponce, user_id_),
+  PROTOBUF_FIELD_OFFSET(::presence::RetrieveUserPresenceByIdResponce, aggregated_status_),
+  PROTOBUF_FIELD_OFFSET(::presence::RetrieveUserPresenceByIdResponce, models_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::presence::UpdateUserConnectionRequest)},
-  { 9, -1, sizeof(::presence::UpdateUserConnectionReply)},
+  { 0, -1, sizeof(::presence::PresenceModel)},
+  { 9, -1, sizeof(::presence::UpdateUserConnectionRequest)},
+  { 18, -1, sizeof(::presence::UpdateUserConnectionReply)},
+  { 25, -1, sizeof(::presence::RetrieveUserPresenceByDeviceRequest)},
+  { 32, -1, sizeof(::presence::RetrieveUserPresenceByDeviceResponse)},
+  { 38, -1, sizeof(::presence::RetrieveUserPresenceByIdRequest)},
+  { 44, -1, sizeof(::presence::RetrieveUserPresenceByIdResponce)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::presence::_PresenceModel_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::presence::_UpdateUserConnectionRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::presence::_UpdateUserConnectionReply_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::presence::_RetrieveUserPresenceByDeviceRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::presence::_RetrieveUserPresenceByDeviceResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::presence::_RetrieveUserPresenceByIdRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::presence::_RetrieveUserPresenceByIdResponce_default_instance_),
 };
 
 const char descriptor_table_protodef_presence_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016presence.proto\022\010presence\"\212\001\n\033UpdateUse"
-  "rConnectionRequest\022\021\n\tdevice_id\030\001 \001(\t\022\017\n"
-  "\007user_id\030\002 \001(\t\022*\n\006status\030\003 \001(\0162\032.presenc"
-  "e.ConnectionStatus\022\033\n\023last_seen_timestam"
-  "p\030\004 \001(\003\"X\n\031UpdateUserConnectionReply\022\017\n\007"
-  "user_id\030\001 \001(\t\022*\n\006status\030\002 \001(\0162\032.presence"
-  ".ConnectionStatus*O\n\020ConnectionStatus\022\020\n"
-  "\014UNDETERMINED\020\000\022\r\n\tCONNECTED\020\001\022\010\n\004AWAY\020\002"
-  "\022\020\n\014DISCONNECTED\020\0032p\n\020PresenceRecorder\022\\"
-  "\n\014UpdateStatus\022%.presence.UpdateUserConn"
-  "ectionRequest\032#.presence.UpdateUserConne"
-  "ctionReply\"\000b\006proto3"
+  "\n\016presence.proto\022\010presence\"|\n\rPresenceMo"
+  "del\022\017\n\007user_id\030\001 \001(\t\022\021\n\tdevice_id\030\002 \001(\t\022"
+  "*\n\006status\030\003 \001(\0162\032.presence.ConnectionSta"
+  "tus\022\033\n\023last_seen_timestamp\030\004 \001(\003\"\212\001\n\033Upd"
+  "ateUserConnectionRequest\022\021\n\tdevice_id\030\001 "
+  "\001(\t\022\017\n\007user_id\030\002 \001(\t\022*\n\006status\030\003 \001(\0162\032.p"
+  "resence.ConnectionStatus\022\033\n\023last_seen_ti"
+  "mestamp\030\004 \001(\003\"X\n\031UpdateUserConnectionRep"
+  "ly\022\017\n\007user_id\030\001 \001(\t\022*\n\006status\030\002 \001(\0162\032.pr"
+  "esence.ConnectionStatus\"I\n#RetrieveUserP"
+  "resenceByDeviceRequest\022\017\n\007user_id\030\001 \001(\t\022"
+  "\021\n\tdevice_id\030\002 \001(\t\"N\n$RetrieveUserPresen"
+  "ceByDeviceResponse\022&\n\005model\030\001 \001(\0132\027.pres"
+  "ence.PresenceModel\"2\n\037RetrieveUserPresen"
+  "ceByIdRequest\022\017\n\007user_id\030\001 \001(\t\"\223\001\n Retri"
+  "eveUserPresenceByIdResponce\022\017\n\007user_id\030\001"
+  " \001(\t\0225\n\021aggregated_status\030\002 \001(\0162\032.presen"
+  "ce.ConnectionStatus\022\'\n\006models\030\003 \003(\0132\027.pr"
+  "esence.PresenceModel*O\n\020ConnectionStatus"
+  "\022\020\n\014UNDETERMINED\020\000\022\r\n\tCONNECTED\020\001\022\010\n\004AWA"
+  "Y\020\002\022\020\n\014DISCONNECTED\020\0032p\n\020PresenceRecorde"
+  "r\022\\\n\014UpdateStatus\022%.presence.UpdateUserC"
+  "onnectionRequest\032#.presence.UpdateUserCo"
+  "nnectionReply\"\0002\211\002\n\021PresenceRetriever\022\177\n"
+  "\034RetrieveUserPresenceByDevice\022-.presence"
+  ".RetrieveUserPresenceByDeviceRequest\032..p"
+  "resence.RetrieveUserPresenceByDeviceResp"
+  "onse\"\000\022s\n\030RetrieveUserPresenceById\022).pre"
+  "sence.RetrieveUserPresenceByIdRequest\032*."
+  "presence.RetrieveUserPresenceByIdResponc"
+  "e\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_presence_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_presence_2eproto_sccs[2] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_presence_2eproto_sccs[7] = {
+  &scc_info_PresenceModel_presence_2eproto.base,
+  &scc_info_RetrieveUserPresenceByDeviceRequest_presence_2eproto.base,
+  &scc_info_RetrieveUserPresenceByDeviceResponse_presence_2eproto.base,
+  &scc_info_RetrieveUserPresenceByIdRequest_presence_2eproto.base,
+  &scc_info_RetrieveUserPresenceByIdResponce_presence_2eproto.base,
   &scc_info_UpdateUserConnectionReply_presence_2eproto.base,
   &scc_info_UpdateUserConnectionRequest_presence_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_presence_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_presence_2eproto = {
-  false, false, descriptor_table_protodef_presence_2eproto, "presence.proto", 460,
-  &descriptor_table_presence_2eproto_once, descriptor_table_presence_2eproto_sccs, descriptor_table_presence_2eproto_deps, 2, 0,
+  false, false, descriptor_table_protodef_presence_2eproto, "presence.proto", 1211,
+  &descriptor_table_presence_2eproto_once, descriptor_table_presence_2eproto_sccs, descriptor_table_presence_2eproto_deps, 7, 0,
   schemas, file_default_instances, TableStruct_presence_2eproto::offsets,
-  file_level_metadata_presence_2eproto, 2, file_level_enum_descriptors_presence_2eproto, file_level_service_descriptors_presence_2eproto,
+  file_level_metadata_presence_2eproto, 7, file_level_enum_descriptors_presence_2eproto, file_level_service_descriptors_presence_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -129,6 +292,315 @@ bool ConnectionStatus_IsValid(int value) {
     default:
       return false;
   }
+}
+
+
+// ===================================================================
+
+void PresenceModel::InitAsDefaultInstance() {
+}
+class PresenceModel::_Internal {
+ public:
+};
+
+PresenceModel::PresenceModel(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:presence.PresenceModel)
+}
+PresenceModel::PresenceModel(const PresenceModel& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_user_id(),
+      GetArena());
+  }
+  device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_device_id().empty()) {
+    device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_device_id(),
+      GetArena());
+  }
+  ::memcpy(&last_seen_timestamp_, &from.last_seen_timestamp_,
+    static_cast<size_t>(reinterpret_cast<char*>(&status_) -
+    reinterpret_cast<char*>(&last_seen_timestamp_)) + sizeof(status_));
+  // @@protoc_insertion_point(copy_constructor:presence.PresenceModel)
+}
+
+void PresenceModel::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PresenceModel_presence_2eproto.base);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&last_seen_timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&status_) -
+      reinterpret_cast<char*>(&last_seen_timestamp_)) + sizeof(status_));
+}
+
+PresenceModel::~PresenceModel() {
+  // @@protoc_insertion_point(destructor:presence.PresenceModel)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void PresenceModel::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  device_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void PresenceModel::ArenaDtor(void* object) {
+  PresenceModel* _this = reinterpret_cast< PresenceModel* >(object);
+  (void)_this;
+}
+void PresenceModel::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void PresenceModel::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const PresenceModel& PresenceModel::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PresenceModel_presence_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void PresenceModel::Clear() {
+// @@protoc_insertion_point(message_clear_start:presence.PresenceModel)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  user_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  device_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::memset(&last_seen_timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&status_) -
+      reinterpret_cast<char*>(&last_seen_timestamp_)) + sizeof(status_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* PresenceModel::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string user_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "presence.PresenceModel.user_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string device_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_device_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "presence.PresenceModel.device_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .presence.ConnectionStatus status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_status(static_cast<::presence::ConnectionStatus>(val));
+        } else goto handle_unusual;
+        continue;
+      // int64 last_seen_timestamp = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          last_seen_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* PresenceModel::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:presence.PresenceModel)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string user_id = 1;
+  if (this->user_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "presence.PresenceModel.user_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_user_id(), target);
+  }
+
+  // string device_id = 2;
+  if (this->device_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_device_id().data(), static_cast<int>(this->_internal_device_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "presence.PresenceModel.device_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_device_id(), target);
+  }
+
+  // .presence.ConnectionStatus status = 3;
+  if (this->status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      3, this->_internal_status(), target);
+  }
+
+  // int64 last_seen_timestamp = 4;
+  if (this->last_seen_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_last_seen_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:presence.PresenceModel)
+  return target;
+}
+
+size_t PresenceModel::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:presence.PresenceModel)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string user_id = 1;
+  if (this->user_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
+
+  // string device_id = 2;
+  if (this->device_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_device_id());
+  }
+
+  // int64 last_seen_timestamp = 4;
+  if (this->last_seen_timestamp() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_last_seen_timestamp());
+  }
+
+  // .presence.ConnectionStatus status = 3;
+  if (this->status() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void PresenceModel::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:presence.PresenceModel)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PresenceModel* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PresenceModel>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:presence.PresenceModel)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:presence.PresenceModel)
+    MergeFrom(*source);
+  }
+}
+
+void PresenceModel::MergeFrom(const PresenceModel& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:presence.PresenceModel)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.user_id().size() > 0) {
+    _internal_set_user_id(from._internal_user_id());
+  }
+  if (from.device_id().size() > 0) {
+    _internal_set_device_id(from._internal_device_id());
+  }
+  if (from.last_seen_timestamp() != 0) {
+    _internal_set_last_seen_timestamp(from._internal_last_seen_timestamp());
+  }
+  if (from.status() != 0) {
+    _internal_set_status(from._internal_status());
+  }
+}
+
+void PresenceModel::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:presence.PresenceModel)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PresenceModel::CopyFrom(const PresenceModel& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:presence.PresenceModel)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PresenceModel::IsInitialized() const {
+  return true;
+}
+
+void PresenceModel::InternalSwap(PresenceModel* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  user_id_.Swap(&other->user_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  device_id_.Swap(&other->device_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PresenceModel, status_)
+      + sizeof(PresenceModel::status_)
+      - PROTOBUF_FIELD_OFFSET(PresenceModel, last_seen_timestamp_)>(
+          reinterpret_cast<char*>(&last_seen_timestamp_),
+          reinterpret_cast<char*>(&other->last_seen_timestamp_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata PresenceModel::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -678,14 +1150,969 @@ void UpdateUserConnectionReply::InternalSwap(UpdateUserConnectionReply* other) {
 }
 
 
+// ===================================================================
+
+void RetrieveUserPresenceByDeviceRequest::InitAsDefaultInstance() {
+}
+class RetrieveUserPresenceByDeviceRequest::_Internal {
+ public:
+};
+
+RetrieveUserPresenceByDeviceRequest::RetrieveUserPresenceByDeviceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:presence.RetrieveUserPresenceByDeviceRequest)
+}
+RetrieveUserPresenceByDeviceRequest::RetrieveUserPresenceByDeviceRequest(const RetrieveUserPresenceByDeviceRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_user_id(),
+      GetArena());
+  }
+  device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_device_id().empty()) {
+    device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_device_id(),
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:presence.RetrieveUserPresenceByDeviceRequest)
+}
+
+void RetrieveUserPresenceByDeviceRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RetrieveUserPresenceByDeviceRequest_presence_2eproto.base);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  device_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+RetrieveUserPresenceByDeviceRequest::~RetrieveUserPresenceByDeviceRequest() {
+  // @@protoc_insertion_point(destructor:presence.RetrieveUserPresenceByDeviceRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void RetrieveUserPresenceByDeviceRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  device_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void RetrieveUserPresenceByDeviceRequest::ArenaDtor(void* object) {
+  RetrieveUserPresenceByDeviceRequest* _this = reinterpret_cast< RetrieveUserPresenceByDeviceRequest* >(object);
+  (void)_this;
+}
+void RetrieveUserPresenceByDeviceRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RetrieveUserPresenceByDeviceRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RetrieveUserPresenceByDeviceRequest& RetrieveUserPresenceByDeviceRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RetrieveUserPresenceByDeviceRequest_presence_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void RetrieveUserPresenceByDeviceRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:presence.RetrieveUserPresenceByDeviceRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  user_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  device_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RetrieveUserPresenceByDeviceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string user_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "presence.RetrieveUserPresenceByDeviceRequest.user_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string device_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_device_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "presence.RetrieveUserPresenceByDeviceRequest.device_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RetrieveUserPresenceByDeviceRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:presence.RetrieveUserPresenceByDeviceRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string user_id = 1;
+  if (this->user_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "presence.RetrieveUserPresenceByDeviceRequest.user_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_user_id(), target);
+  }
+
+  // string device_id = 2;
+  if (this->device_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_device_id().data(), static_cast<int>(this->_internal_device_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "presence.RetrieveUserPresenceByDeviceRequest.device_id");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_device_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:presence.RetrieveUserPresenceByDeviceRequest)
+  return target;
+}
+
+size_t RetrieveUserPresenceByDeviceRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:presence.RetrieveUserPresenceByDeviceRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string user_id = 1;
+  if (this->user_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
+
+  // string device_id = 2;
+  if (this->device_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_device_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RetrieveUserPresenceByDeviceRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:presence.RetrieveUserPresenceByDeviceRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RetrieveUserPresenceByDeviceRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RetrieveUserPresenceByDeviceRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:presence.RetrieveUserPresenceByDeviceRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:presence.RetrieveUserPresenceByDeviceRequest)
+    MergeFrom(*source);
+  }
+}
+
+void RetrieveUserPresenceByDeviceRequest::MergeFrom(const RetrieveUserPresenceByDeviceRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:presence.RetrieveUserPresenceByDeviceRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.user_id().size() > 0) {
+    _internal_set_user_id(from._internal_user_id());
+  }
+  if (from.device_id().size() > 0) {
+    _internal_set_device_id(from._internal_device_id());
+  }
+}
+
+void RetrieveUserPresenceByDeviceRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:presence.RetrieveUserPresenceByDeviceRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RetrieveUserPresenceByDeviceRequest::CopyFrom(const RetrieveUserPresenceByDeviceRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:presence.RetrieveUserPresenceByDeviceRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RetrieveUserPresenceByDeviceRequest::IsInitialized() const {
+  return true;
+}
+
+void RetrieveUserPresenceByDeviceRequest::InternalSwap(RetrieveUserPresenceByDeviceRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  user_id_.Swap(&other->user_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  device_id_.Swap(&other->device_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RetrieveUserPresenceByDeviceRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void RetrieveUserPresenceByDeviceResponse::InitAsDefaultInstance() {
+  ::presence::_RetrieveUserPresenceByDeviceResponse_default_instance_._instance.get_mutable()->model_ = const_cast< ::presence::PresenceModel*>(
+      ::presence::PresenceModel::internal_default_instance());
+}
+class RetrieveUserPresenceByDeviceResponse::_Internal {
+ public:
+  static const ::presence::PresenceModel& model(const RetrieveUserPresenceByDeviceResponse* msg);
+};
+
+const ::presence::PresenceModel&
+RetrieveUserPresenceByDeviceResponse::_Internal::model(const RetrieveUserPresenceByDeviceResponse* msg) {
+  return *msg->model_;
+}
+RetrieveUserPresenceByDeviceResponse::RetrieveUserPresenceByDeviceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:presence.RetrieveUserPresenceByDeviceResponse)
+}
+RetrieveUserPresenceByDeviceResponse::RetrieveUserPresenceByDeviceResponse(const RetrieveUserPresenceByDeviceResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_model()) {
+    model_ = new ::presence::PresenceModel(*from.model_);
+  } else {
+    model_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:presence.RetrieveUserPresenceByDeviceResponse)
+}
+
+void RetrieveUserPresenceByDeviceResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RetrieveUserPresenceByDeviceResponse_presence_2eproto.base);
+  model_ = nullptr;
+}
+
+RetrieveUserPresenceByDeviceResponse::~RetrieveUserPresenceByDeviceResponse() {
+  // @@protoc_insertion_point(destructor:presence.RetrieveUserPresenceByDeviceResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void RetrieveUserPresenceByDeviceResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  if (this != internal_default_instance()) delete model_;
+}
+
+void RetrieveUserPresenceByDeviceResponse::ArenaDtor(void* object) {
+  RetrieveUserPresenceByDeviceResponse* _this = reinterpret_cast< RetrieveUserPresenceByDeviceResponse* >(object);
+  (void)_this;
+}
+void RetrieveUserPresenceByDeviceResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RetrieveUserPresenceByDeviceResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RetrieveUserPresenceByDeviceResponse& RetrieveUserPresenceByDeviceResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RetrieveUserPresenceByDeviceResponse_presence_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void RetrieveUserPresenceByDeviceResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:presence.RetrieveUserPresenceByDeviceResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArena() == nullptr && model_ != nullptr) {
+    delete model_;
+  }
+  model_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RetrieveUserPresenceByDeviceResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .presence.PresenceModel model = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_model(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RetrieveUserPresenceByDeviceResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:presence.RetrieveUserPresenceByDeviceResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .presence.PresenceModel model = 1;
+  if (this->has_model()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::model(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:presence.RetrieveUserPresenceByDeviceResponse)
+  return target;
+}
+
+size_t RetrieveUserPresenceByDeviceResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:presence.RetrieveUserPresenceByDeviceResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .presence.PresenceModel model = 1;
+  if (this->has_model()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *model_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RetrieveUserPresenceByDeviceResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:presence.RetrieveUserPresenceByDeviceResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RetrieveUserPresenceByDeviceResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RetrieveUserPresenceByDeviceResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:presence.RetrieveUserPresenceByDeviceResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:presence.RetrieveUserPresenceByDeviceResponse)
+    MergeFrom(*source);
+  }
+}
+
+void RetrieveUserPresenceByDeviceResponse::MergeFrom(const RetrieveUserPresenceByDeviceResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:presence.RetrieveUserPresenceByDeviceResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_model()) {
+    _internal_mutable_model()->::presence::PresenceModel::MergeFrom(from._internal_model());
+  }
+}
+
+void RetrieveUserPresenceByDeviceResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:presence.RetrieveUserPresenceByDeviceResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RetrieveUserPresenceByDeviceResponse::CopyFrom(const RetrieveUserPresenceByDeviceResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:presence.RetrieveUserPresenceByDeviceResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RetrieveUserPresenceByDeviceResponse::IsInitialized() const {
+  return true;
+}
+
+void RetrieveUserPresenceByDeviceResponse::InternalSwap(RetrieveUserPresenceByDeviceResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(model_, other->model_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RetrieveUserPresenceByDeviceResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void RetrieveUserPresenceByIdRequest::InitAsDefaultInstance() {
+}
+class RetrieveUserPresenceByIdRequest::_Internal {
+ public:
+};
+
+RetrieveUserPresenceByIdRequest::RetrieveUserPresenceByIdRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:presence.RetrieveUserPresenceByIdRequest)
+}
+RetrieveUserPresenceByIdRequest::RetrieveUserPresenceByIdRequest(const RetrieveUserPresenceByIdRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_user_id(),
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:presence.RetrieveUserPresenceByIdRequest)
+}
+
+void RetrieveUserPresenceByIdRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RetrieveUserPresenceByIdRequest_presence_2eproto.base);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+RetrieveUserPresenceByIdRequest::~RetrieveUserPresenceByIdRequest() {
+  // @@protoc_insertion_point(destructor:presence.RetrieveUserPresenceByIdRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void RetrieveUserPresenceByIdRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void RetrieveUserPresenceByIdRequest::ArenaDtor(void* object) {
+  RetrieveUserPresenceByIdRequest* _this = reinterpret_cast< RetrieveUserPresenceByIdRequest* >(object);
+  (void)_this;
+}
+void RetrieveUserPresenceByIdRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RetrieveUserPresenceByIdRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RetrieveUserPresenceByIdRequest& RetrieveUserPresenceByIdRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RetrieveUserPresenceByIdRequest_presence_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void RetrieveUserPresenceByIdRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:presence.RetrieveUserPresenceByIdRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  user_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RetrieveUserPresenceByIdRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string user_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "presence.RetrieveUserPresenceByIdRequest.user_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RetrieveUserPresenceByIdRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:presence.RetrieveUserPresenceByIdRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string user_id = 1;
+  if (this->user_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "presence.RetrieveUserPresenceByIdRequest.user_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_user_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:presence.RetrieveUserPresenceByIdRequest)
+  return target;
+}
+
+size_t RetrieveUserPresenceByIdRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:presence.RetrieveUserPresenceByIdRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string user_id = 1;
+  if (this->user_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RetrieveUserPresenceByIdRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:presence.RetrieveUserPresenceByIdRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RetrieveUserPresenceByIdRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RetrieveUserPresenceByIdRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:presence.RetrieveUserPresenceByIdRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:presence.RetrieveUserPresenceByIdRequest)
+    MergeFrom(*source);
+  }
+}
+
+void RetrieveUserPresenceByIdRequest::MergeFrom(const RetrieveUserPresenceByIdRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:presence.RetrieveUserPresenceByIdRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.user_id().size() > 0) {
+    _internal_set_user_id(from._internal_user_id());
+  }
+}
+
+void RetrieveUserPresenceByIdRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:presence.RetrieveUserPresenceByIdRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RetrieveUserPresenceByIdRequest::CopyFrom(const RetrieveUserPresenceByIdRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:presence.RetrieveUserPresenceByIdRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RetrieveUserPresenceByIdRequest::IsInitialized() const {
+  return true;
+}
+
+void RetrieveUserPresenceByIdRequest::InternalSwap(RetrieveUserPresenceByIdRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  user_id_.Swap(&other->user_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RetrieveUserPresenceByIdRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void RetrieveUserPresenceByIdResponce::InitAsDefaultInstance() {
+}
+class RetrieveUserPresenceByIdResponce::_Internal {
+ public:
+};
+
+RetrieveUserPresenceByIdResponce::RetrieveUserPresenceByIdResponce(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  models_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:presence.RetrieveUserPresenceByIdResponce)
+}
+RetrieveUserPresenceByIdResponce::RetrieveUserPresenceByIdResponce(const RetrieveUserPresenceByIdResponce& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      models_(from.models_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_user_id().empty()) {
+    user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_user_id(),
+      GetArena());
+  }
+  aggregated_status_ = from.aggregated_status_;
+  // @@protoc_insertion_point(copy_constructor:presence.RetrieveUserPresenceByIdResponce)
+}
+
+void RetrieveUserPresenceByIdResponce::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RetrieveUserPresenceByIdResponce_presence_2eproto.base);
+  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  aggregated_status_ = 0;
+}
+
+RetrieveUserPresenceByIdResponce::~RetrieveUserPresenceByIdResponce() {
+  // @@protoc_insertion_point(destructor:presence.RetrieveUserPresenceByIdResponce)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void RetrieveUserPresenceByIdResponce::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void RetrieveUserPresenceByIdResponce::ArenaDtor(void* object) {
+  RetrieveUserPresenceByIdResponce* _this = reinterpret_cast< RetrieveUserPresenceByIdResponce* >(object);
+  (void)_this;
+}
+void RetrieveUserPresenceByIdResponce::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RetrieveUserPresenceByIdResponce::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RetrieveUserPresenceByIdResponce& RetrieveUserPresenceByIdResponce::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RetrieveUserPresenceByIdResponce_presence_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void RetrieveUserPresenceByIdResponce::Clear() {
+// @@protoc_insertion_point(message_clear_start:presence.RetrieveUserPresenceByIdResponce)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  models_.Clear();
+  user_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  aggregated_status_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RetrieveUserPresenceByIdResponce::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string user_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_user_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "presence.RetrieveUserPresenceByIdResponce.user_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .presence.ConnectionStatus aggregated_status = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_aggregated_status(static_cast<::presence::ConnectionStatus>(val));
+        } else goto handle_unusual;
+        continue;
+      // repeated .presence.PresenceModel models = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_models(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RetrieveUserPresenceByIdResponce::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:presence.RetrieveUserPresenceByIdResponce)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string user_id = 1;
+  if (this->user_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "presence.RetrieveUserPresenceByIdResponce.user_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_user_id(), target);
+  }
+
+  // .presence.ConnectionStatus aggregated_status = 2;
+  if (this->aggregated_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_aggregated_status(), target);
+  }
+
+  // repeated .presence.PresenceModel models = 3;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_models_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, this->_internal_models(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:presence.RetrieveUserPresenceByIdResponce)
+  return target;
+}
+
+size_t RetrieveUserPresenceByIdResponce::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:presence.RetrieveUserPresenceByIdResponce)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .presence.PresenceModel models = 3;
+  total_size += 1UL * this->_internal_models_size();
+  for (const auto& msg : this->models_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string user_id = 1;
+  if (this->user_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_user_id());
+  }
+
+  // .presence.ConnectionStatus aggregated_status = 2;
+  if (this->aggregated_status() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_aggregated_status());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RetrieveUserPresenceByIdResponce::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:presence.RetrieveUserPresenceByIdResponce)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RetrieveUserPresenceByIdResponce* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RetrieveUserPresenceByIdResponce>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:presence.RetrieveUserPresenceByIdResponce)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:presence.RetrieveUserPresenceByIdResponce)
+    MergeFrom(*source);
+  }
+}
+
+void RetrieveUserPresenceByIdResponce::MergeFrom(const RetrieveUserPresenceByIdResponce& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:presence.RetrieveUserPresenceByIdResponce)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  models_.MergeFrom(from.models_);
+  if (from.user_id().size() > 0) {
+    _internal_set_user_id(from._internal_user_id());
+  }
+  if (from.aggregated_status() != 0) {
+    _internal_set_aggregated_status(from._internal_aggregated_status());
+  }
+}
+
+void RetrieveUserPresenceByIdResponce::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:presence.RetrieveUserPresenceByIdResponce)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RetrieveUserPresenceByIdResponce::CopyFrom(const RetrieveUserPresenceByIdResponce& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:presence.RetrieveUserPresenceByIdResponce)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RetrieveUserPresenceByIdResponce::IsInitialized() const {
+  return true;
+}
+
+void RetrieveUserPresenceByIdResponce::InternalSwap(RetrieveUserPresenceByIdResponce* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  models_.InternalSwap(&other->models_);
+  user_id_.Swap(&other->user_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(aggregated_status_, other->aggregated_status_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RetrieveUserPresenceByIdResponce::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace presence
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::presence::PresenceModel* Arena::CreateMaybeMessage< ::presence::PresenceModel >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::presence::PresenceModel >(arena);
+}
 template<> PROTOBUF_NOINLINE ::presence::UpdateUserConnectionRequest* Arena::CreateMaybeMessage< ::presence::UpdateUserConnectionRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::presence::UpdateUserConnectionRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::presence::UpdateUserConnectionReply* Arena::CreateMaybeMessage< ::presence::UpdateUserConnectionReply >(Arena* arena) {
   return Arena::CreateMessageInternal< ::presence::UpdateUserConnectionReply >(arena);
+}
+template<> PROTOBUF_NOINLINE ::presence::RetrieveUserPresenceByDeviceRequest* Arena::CreateMaybeMessage< ::presence::RetrieveUserPresenceByDeviceRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::presence::RetrieveUserPresenceByDeviceRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::presence::RetrieveUserPresenceByDeviceResponse* Arena::CreateMaybeMessage< ::presence::RetrieveUserPresenceByDeviceResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::presence::RetrieveUserPresenceByDeviceResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::presence::RetrieveUserPresenceByIdRequest* Arena::CreateMaybeMessage< ::presence::RetrieveUserPresenceByIdRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::presence::RetrieveUserPresenceByIdRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::presence::RetrieveUserPresenceByIdResponce* Arena::CreateMaybeMessage< ::presence::RetrieveUserPresenceByIdResponce >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::presence::RetrieveUserPresenceByIdResponce >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

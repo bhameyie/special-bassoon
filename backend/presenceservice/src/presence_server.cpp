@@ -19,9 +19,9 @@ class PresenceRecorderImpl final : public PresenceRecorder::Service
 {
     
 public:
-    PresenceRecorderImpl(unique_ptr<PresenceCache> cache)
+    PresenceRecorderImpl(shared_ptr<PresenceCache> cache)
     {
-        presence_cache_ = std::move(cache);
+        presence_cache_ = cache;
     }
 
     Status UpdateStatus(::grpc::ServerContext *context,
@@ -32,5 +32,5 @@ public:
     }
 
 private:
-    std::unique_ptr<PresenceCache> presence_cache_;
+    std::shared_ptr<PresenceCache> presence_cache_;
 };

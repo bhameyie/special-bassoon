@@ -49,6 +49,9 @@ message RetrieveUserPresenceByIdResponce{
 
 service PresenceRecorder {
   rpc UpdateStatus(UpdateUserConnectionRequest) returns (UpdateUserConnectionReply) {}
+}
+
+service PresenceRetriever{
   rpc RetrieveUserPresenceByDevice(RetrieveUserPresenceByDeviceRequest) returns (RetrieveUserPresenceByDeviceResponse){}
   rpc RetrieveUserPresenceById(RetrieveUserPresenceByIdRequest) returns(RetrieveUserPresenceByIdResponce){}
 }

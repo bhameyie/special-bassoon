@@ -286,6 +286,465 @@ class PresenceRecorder final {
   typedef WithStreamedUnaryMethod_UpdateStatus<Service > StreamedService;
 };
 
+class PresenceRetriever final {
+ public:
+  static constexpr char const* service_full_name() {
+    return "presence.PresenceRetriever";
+  }
+  class StubInterface {
+   public:
+    virtual ~StubInterface() {}
+    virtual ::grpc::Status RetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::presence::RetrieveUserPresenceByDeviceResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByDeviceResponse>> AsyncRetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByDeviceResponse>>(AsyncRetrieveUserPresenceByDeviceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByDeviceResponse>> PrepareAsyncRetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByDeviceResponse>>(PrepareAsyncRetrieveUserPresenceByDeviceRaw(context, request, cq));
+    }
+    virtual ::grpc::Status RetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::presence::RetrieveUserPresenceByIdResponce* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByIdResponce>> AsyncRetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByIdResponce>>(AsyncRetrieveUserPresenceByIdRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByIdResponce>> PrepareAsyncRetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByIdResponce>>(PrepareAsyncRetrieveUserPresenceByIdRaw(context, request, cq));
+    }
+    class experimental_async_interface {
+     public:
+      virtual ~experimental_async_interface() {}
+      virtual void RetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest* request, ::presence::RetrieveUserPresenceByDeviceResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void RetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest* request, ::presence::RetrieveUserPresenceByDeviceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void RetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest* request, ::presence::RetrieveUserPresenceByDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void RetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponce* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void RetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponce* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void RetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponce* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+    };
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByDeviceResponse>* AsyncRetrieveUserPresenceByDeviceRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByDeviceResponse>* PrepareAsyncRetrieveUserPresenceByDeviceRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByIdResponce>* AsyncRetrieveUserPresenceByIdRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByIdResponce>* PrepareAsyncRetrieveUserPresenceByIdRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq) = 0;
+  };
+  class Stub final : public StubInterface {
+   public:
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    ::grpc::Status RetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::presence::RetrieveUserPresenceByDeviceResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByDeviceResponse>> AsyncRetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByDeviceResponse>>(AsyncRetrieveUserPresenceByDeviceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByDeviceResponse>> PrepareAsyncRetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByDeviceResponse>>(PrepareAsyncRetrieveUserPresenceByDeviceRaw(context, request, cq));
+    }
+    ::grpc::Status RetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::presence::RetrieveUserPresenceByIdResponce* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByIdResponce>> AsyncRetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByIdResponce>>(AsyncRetrieveUserPresenceByIdRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByIdResponce>> PrepareAsyncRetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByIdResponce>>(PrepareAsyncRetrieveUserPresenceByIdRaw(context, request, cq));
+    }
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
+     public:
+      void RetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest* request, ::presence::RetrieveUserPresenceByDeviceResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void RetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest* request, ::presence::RetrieveUserPresenceByDeviceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void RetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest* request, ::presence::RetrieveUserPresenceByDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void RetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponce* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void RetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponce* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void RetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponce* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+     private:
+      friend class Stub;
+      explicit experimental_async(Stub* stub): stub_(stub) { }
+      Stub* stub() { return stub_; }
+      Stub* stub_;
+    };
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+
+   private:
+    std::shared_ptr< ::grpc::ChannelInterface> channel_;
+    class experimental_async async_stub_{this};
+    ::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByDeviceResponse>* AsyncRetrieveUserPresenceByDeviceRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByDeviceResponse>* PrepareAsyncRetrieveUserPresenceByDeviceRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByIdResponce>* AsyncRetrieveUserPresenceByIdRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByIdResponce>* PrepareAsyncRetrieveUserPresenceByIdRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_RetrieveUserPresenceByDevice_;
+    const ::grpc::internal::RpcMethod rpcmethod_RetrieveUserPresenceById_;
+  };
+  static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+
+  class Service : public ::grpc::Service {
+   public:
+    Service();
+    virtual ~Service();
+    virtual ::grpc::Status RetrieveUserPresenceByDevice(::grpc::ServerContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest* request, ::presence::RetrieveUserPresenceByDeviceResponse* response);
+    virtual ::grpc::Status RetrieveUserPresenceById(::grpc::ServerContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponce* response);
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_RetrieveUserPresenceByDevice : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_RetrieveUserPresenceByDevice() {
+      ::grpc::Service::MarkMethodAsync(0);
+    }
+    ~WithAsyncMethod_RetrieveUserPresenceByDevice() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RetrieveUserPresenceByDevice(::grpc::ServerContext* /*context*/, const ::presence::RetrieveUserPresenceByDeviceRequest* /*request*/, ::presence::RetrieveUserPresenceByDeviceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRetrieveUserPresenceByDevice(::grpc::ServerContext* context, ::presence::RetrieveUserPresenceByDeviceRequest* request, ::grpc::ServerAsyncResponseWriter< ::presence::RetrieveUserPresenceByDeviceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_RetrieveUserPresenceById : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_RetrieveUserPresenceById() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_RetrieveUserPresenceById() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RetrieveUserPresenceById(::grpc::ServerContext* /*context*/, const ::presence::RetrieveUserPresenceByIdRequest* /*request*/, ::presence::RetrieveUserPresenceByIdResponce* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRetrieveUserPresenceById(::grpc::ServerContext* context, ::presence::RetrieveUserPresenceByIdRequest* request, ::grpc::ServerAsyncResponseWriter< ::presence::RetrieveUserPresenceByIdResponce>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_RetrieveUserPresenceByDevice<WithAsyncMethod_RetrieveUserPresenceById<Service > > AsyncService;
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_RetrieveUserPresenceByDevice : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_RetrieveUserPresenceByDevice() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
+          new ::grpc::internal::CallbackUnaryHandler< ::presence::RetrieveUserPresenceByDeviceRequest, ::presence::RetrieveUserPresenceByDeviceResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::presence::RetrieveUserPresenceByDeviceRequest* request, ::presence::RetrieveUserPresenceByDeviceResponse* response) { return this->RetrieveUserPresenceByDevice(context, request, response); }));}
+    void SetMessageAllocatorFor_RetrieveUserPresenceByDevice(
+        ::grpc::experimental::MessageAllocator< ::presence::RetrieveUserPresenceByDeviceRequest, ::presence::RetrieveUserPresenceByDeviceResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::presence::RetrieveUserPresenceByDeviceRequest, ::presence::RetrieveUserPresenceByDeviceResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_RetrieveUserPresenceByDevice() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RetrieveUserPresenceByDevice(::grpc::ServerContext* /*context*/, const ::presence::RetrieveUserPresenceByDeviceRequest* /*request*/, ::presence::RetrieveUserPresenceByDeviceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* RetrieveUserPresenceByDevice(
+      ::grpc::CallbackServerContext* /*context*/, const ::presence::RetrieveUserPresenceByDeviceRequest* /*request*/, ::presence::RetrieveUserPresenceByDeviceResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* RetrieveUserPresenceByDevice(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::presence::RetrieveUserPresenceByDeviceRequest* /*request*/, ::presence::RetrieveUserPresenceByDeviceResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_RetrieveUserPresenceById : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_RetrieveUserPresenceById() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::presence::RetrieveUserPresenceByIdRequest, ::presence::RetrieveUserPresenceByIdResponce>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponce* response) { return this->RetrieveUserPresenceById(context, request, response); }));}
+    void SetMessageAllocatorFor_RetrieveUserPresenceById(
+        ::grpc::experimental::MessageAllocator< ::presence::RetrieveUserPresenceByIdRequest, ::presence::RetrieveUserPresenceByIdResponce>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::presence::RetrieveUserPresenceByIdRequest, ::presence::RetrieveUserPresenceByIdResponce>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_RetrieveUserPresenceById() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RetrieveUserPresenceById(::grpc::ServerContext* /*context*/, const ::presence::RetrieveUserPresenceByIdRequest* /*request*/, ::presence::RetrieveUserPresenceByIdResponce* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* RetrieveUserPresenceById(
+      ::grpc::CallbackServerContext* /*context*/, const ::presence::RetrieveUserPresenceByIdRequest* /*request*/, ::presence::RetrieveUserPresenceByIdResponce* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* RetrieveUserPresenceById(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::presence::RetrieveUserPresenceByIdRequest* /*request*/, ::presence::RetrieveUserPresenceByIdResponce* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_RetrieveUserPresenceByDevice<ExperimentalWithCallbackMethod_RetrieveUserPresenceById<Service > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_RetrieveUserPresenceByDevice<ExperimentalWithCallbackMethod_RetrieveUserPresenceById<Service > > ExperimentalCallbackService;
+  template <class BaseClass>
+  class WithGenericMethod_RetrieveUserPresenceByDevice : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_RetrieveUserPresenceByDevice() {
+      ::grpc::Service::MarkMethodGeneric(0);
+    }
+    ~WithGenericMethod_RetrieveUserPresenceByDevice() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RetrieveUserPresenceByDevice(::grpc::ServerContext* /*context*/, const ::presence::RetrieveUserPresenceByDeviceRequest* /*request*/, ::presence::RetrieveUserPresenceByDeviceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_RetrieveUserPresenceById : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_RetrieveUserPresenceById() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_RetrieveUserPresenceById() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RetrieveUserPresenceById(::grpc::ServerContext* /*context*/, const ::presence::RetrieveUserPresenceByIdRequest* /*request*/, ::presence::RetrieveUserPresenceByIdResponce* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_RetrieveUserPresenceByDevice : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_RetrieveUserPresenceByDevice() {
+      ::grpc::Service::MarkMethodRaw(0);
+    }
+    ~WithRawMethod_RetrieveUserPresenceByDevice() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RetrieveUserPresenceByDevice(::grpc::ServerContext* /*context*/, const ::presence::RetrieveUserPresenceByDeviceRequest* /*request*/, ::presence::RetrieveUserPresenceByDeviceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRetrieveUserPresenceByDevice(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_RetrieveUserPresenceById : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_RetrieveUserPresenceById() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_RetrieveUserPresenceById() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RetrieveUserPresenceById(::grpc::ServerContext* /*context*/, const ::presence::RetrieveUserPresenceByIdRequest* /*request*/, ::presence::RetrieveUserPresenceByIdResponce* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRetrieveUserPresenceById(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_RetrieveUserPresenceByDevice : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_RetrieveUserPresenceByDevice() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RetrieveUserPresenceByDevice(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_RetrieveUserPresenceByDevice() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RetrieveUserPresenceByDevice(::grpc::ServerContext* /*context*/, const ::presence::RetrieveUserPresenceByDeviceRequest* /*request*/, ::presence::RetrieveUserPresenceByDeviceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* RetrieveUserPresenceByDevice(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* RetrieveUserPresenceByDevice(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_RetrieveUserPresenceById : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_RetrieveUserPresenceById() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RetrieveUserPresenceById(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_RetrieveUserPresenceById() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RetrieveUserPresenceById(::grpc::ServerContext* /*context*/, const ::presence::RetrieveUserPresenceByIdRequest* /*request*/, ::presence::RetrieveUserPresenceByIdResponce* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* RetrieveUserPresenceById(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* RetrieveUserPresenceById(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_RetrieveUserPresenceByDevice : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_RetrieveUserPresenceByDevice() {
+      ::grpc::Service::MarkMethodStreamed(0,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::presence::RetrieveUserPresenceByDeviceRequest, ::presence::RetrieveUserPresenceByDeviceResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::presence::RetrieveUserPresenceByDeviceRequest, ::presence::RetrieveUserPresenceByDeviceResponse>* streamer) {
+                       return this->StreamedRetrieveUserPresenceByDevice(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_RetrieveUserPresenceByDevice() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status RetrieveUserPresenceByDevice(::grpc::ServerContext* /*context*/, const ::presence::RetrieveUserPresenceByDeviceRequest* /*request*/, ::presence::RetrieveUserPresenceByDeviceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedRetrieveUserPresenceByDevice(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::presence::RetrieveUserPresenceByDeviceRequest,::presence::RetrieveUserPresenceByDeviceResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_RetrieveUserPresenceById : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_RetrieveUserPresenceById() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::presence::RetrieveUserPresenceByIdRequest, ::presence::RetrieveUserPresenceByIdResponce>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::presence::RetrieveUserPresenceByIdRequest, ::presence::RetrieveUserPresenceByIdResponce>* streamer) {
+                       return this->StreamedRetrieveUserPresenceById(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_RetrieveUserPresenceById() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status RetrieveUserPresenceById(::grpc::ServerContext* /*context*/, const ::presence::RetrieveUserPresenceByIdRequest* /*request*/, ::presence::RetrieveUserPresenceByIdResponce* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedRetrieveUserPresenceById(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::presence::RetrieveUserPresenceByIdRequest,::presence::RetrieveUserPresenceByIdResponce>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_RetrieveUserPresenceByDevice<WithStreamedUnaryMethod_RetrieveUserPresenceById<Service > > StreamedUnaryService;
+  typedef Service SplitStreamedService;
+  typedef WithStreamedUnaryMethod_RetrieveUserPresenceByDevice<WithStreamedUnaryMethod_RetrieveUserPresenceById<Service > > StreamedService;
+};
+
 }  // namespace presence
 
 
