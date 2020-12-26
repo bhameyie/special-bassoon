@@ -5,7 +5,7 @@
 class PresenceCacheImpl : public PresenceCache
 {
 public:
-    UpdatedPresence UpdatePresence(const PresenceUpdate update) const
+    UpdatedPresence UpdatePresence(const PresenceUpdate update) const override
     {
         return UpdatedPresence();
     }
