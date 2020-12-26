@@ -1,0 +1,15 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "run presence service tests",
+            "command": "./build/presenceservice/tests/presenceservicetest",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
