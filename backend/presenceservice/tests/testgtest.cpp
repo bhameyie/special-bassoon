@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 //#include <presenceservice/Yello.hpp>
-#include "presenceservice/Yello.hpp"
 #include <iostream>
+#include "Yello.cpp"
 //#include <memory>
 #include <string>
 
@@ -11,7 +11,7 @@ TEST(sample_test_case, sample_test)
     //GreeterClient greeter(grpc::CreateChannel(
     //        "localhost:50051", grpc::InsecureChannelCredentials()));
 
-    EXPECT_EQ(4,  meh(2));
+    EXPECT_EQ(10,  meh(2));
 }
 
 /*

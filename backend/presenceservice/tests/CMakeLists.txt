@@ -19,28 +19,19 @@ add_executable(presenceservicetest testgtest.cpp  )
 
 target_compile_features(presenceservicetest PRIVATE cxx_std_17)
 
+add_test(NAME presenceservicecheck COMMAND presenceservicetest) # Command can be a target
+set_tests_properties(presenceservicecheck PROPERTIES
+    ENVIRONMENT "TEST_FILE=all"
+)
+target_include_directories (
+    presenceservicetest
+    PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/../src/gen
+    ${CMAKE_CURRENT_SOURCE_DIR}/../src
+)
 # Link test executable against gtest & gtest_main
-target_link_libraries(presenceservicetest PRIVATE presenceservicelib gtest gtest_main  ${_REFLECTION}
+target_link_libraries(presenceservicetest PRIVATE gtest gtest_main  ${_REFLECTION}
         ${_GRPC_GRPCPP}
         ${_PROTOBUF_LIBPROTOBUF})
 #gtest_add_tests(TARGET presenceservicetest TEST_PREFIX old:)
 gtest_discover_tests(presenceservicetest)
-
-add_test(NAME presenceservicetesttest COMMAND presenceservicetest) # Command can be a target
-
-#FetchContent_Declare(
-#  Catch2
-#  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-#  GIT_TAG        v2.13.1)
-#
-#FetchContent_MakeAvailable(Catch2)
-#
-#add_executable(presenceservicetest testgtest.cpp)
-#
-#target_compile_features(presenceservicetest PRIVATE cxx_std_17)
-#
-## Link test executable against gtest & gtest_main
-#target_link_libraries(presenceservicetest PRIVATE presenceservicelib Catch2::Catch2)
-##gtest_add_tests(TARGET presenceservicetest TEST_PREFIX old:)
-#
-#add_test(NAME presenceservicetesttest COMMAND presenceservicetest) # Command can be a target
