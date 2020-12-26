@@ -9,6 +9,13 @@ enum ConnectionStatus{
   DISCONNECTED = 3;
 }
 
+message PresenceModel{
+  string user_id = 1;
+  string device_id = 2;
+  ConnectionStatus status = 3;
+  int64 last_seen_timestamp = 4; 
+}
+
 message UpdateUserConnectionRequest{
   string device_id = 1;
   string user_id = 2;
@@ -21,6 +28,27 @@ message UpdateUserConnectionReply{
   ConnectionStatus status = 2;
 }
 
+message RetrieveUserPresenceByDeviceRequest{
+  string user_id = 1;
+  string device_id = 2;
+}
+
+message RetrieveUserPresenceByDeviceResponse{
+  PresenceModel model = 1;
+}
+
+message RetrieveUserPresenceByIdRequest{
+  string user_id = 1;
+}
+
+message RetrieveUserPresenceByIdResponce{
+  string user_id = 1;
+  ConnectionStatus aggregated_status = 2;
+  repeated PresenceModel models = 3;
+}
+
 service PresenceRecorder {
   rpc UpdateStatus(UpdateUserConnectionRequest) returns (UpdateUserConnectionReply) {}
+  rpc RetrieveUserPresenceByDevice(RetrieveUserPresenceByDeviceRequest) returns (RetrieveUserPresenceByDeviceResponse){}
+  rpc RetrieveUserPresenceById(RetrieveUserPresenceByIdRequest) returns(RetrieveUserPresenceByIdResponce){}
 }
