@@ -2,6 +2,7 @@
 #include "Yello.cpp"
 #include <fmt/format.h>
 #include "service_runner.cpp"
+#include "presence_recorder_service.cpp"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -12,7 +13,7 @@ int main() {
 
     auto server = runner.Run();
 
-    server->Wait();
+   // server->Wait();
 
     return 0;
 }

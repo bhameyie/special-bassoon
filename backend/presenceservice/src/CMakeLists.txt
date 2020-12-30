@@ -17,7 +17,7 @@ add_custom_command(
         PRE_BUILD
         OUTPUT "${hw_proto_srcs}" "${hw_proto_hdrs}" "${hw_grpc_srcs}" "${hw_grpc_hdrs}"
         COMMAND ${_PROTOBUF_PROTOC}
-        ARGS --grpc_out "${CMAKE_CURRENT_SOURCE_DIR}/gen"
+        ARGS --grpc_out=generate_mock_code=true:"${CMAKE_CURRENT_SOURCE_DIR}/gen" #"${CMAKE_CURRENT_SOURCE_DIR}/gen"
         --cpp_out "${CMAKE_CURRENT_SOURCE_DIR}/gen"
         -I "${hw_proto_path}"
         --plugin=protoc-gen-grpc="${_GRPC_CPP_PLUGIN_EXECUTABLE}"
@@ -27,7 +27,20 @@ add_custom_command(
 
 include_directories("gen")
 
-add_library(presenceservicelib presence_cache.cpp Yello.cpp presence_retriever.cpp presence_recorder.cpp service_runner.cpp service_models.h presence_cache.h   ${hw_proto_srcs} ${hw_grpc_srcs})
+add_library(presenceservicelib 
+presence_cache.cpp 
+Yello.cpp 
+presence_retriever.cpp 
+presence_recorder.cpp 
+presence_retriever_service.cpp
+presence_retriever_service.h
+presence_recorder_service.cpp
+presence_recorder_service.h
+service_models.h 
+presence_cache.h   
+service_runner.cpp
+${hw_proto_srcs} 
+${hw_grpc_srcs})
 
 target_link_libraries(presenceservicelib PRIVATE Boost::boost
         ${_REFLECTION}

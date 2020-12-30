@@ -9,6 +9,13 @@ struct UpdatedPresence
     std::string user_id;
 };
 
+struct RecordedPresence{
+    std::string device_id;
+    std::string user_id;
+    unsigned int status_id;
+    long last_seen_timestamp;
+};
+
 struct PresenceUpdate
 {
     std::string device_id;
@@ -16,6 +23,5 @@ struct PresenceUpdate
     unsigned int status_id;
     long last_seen_timestamp;
 };
-
 
 #endif // __SERVICE_MODELS_H__

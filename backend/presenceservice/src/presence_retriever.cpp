@@ -6,6 +6,7 @@
 #include "presence.pb.h"
 #include "presence.grpc.pb.h"
 #include "presence_cache.h"
+#include "presence_retriever_service.h"
 
 using grpc::Server;
 using grpc::ServerBuilder;
@@ -19,9 +20,9 @@ class PresenceRetrieverImpl final : public PresenceRetriever::Service
 {
 
 public:
-    PresenceRetrieverImpl(shared_ptr<PresenceCache> cache)
+    PresenceRetrieverImpl(std::unique_ptr<PresenceRetrieverService> service)
     {
-        presence_cache_ = cache;
+        service_ = std::move(service);
     }
 
     grpc::Status RetrieveUserPresenceByDevice(::grpc::ServerContext *context, const ::presence::RetrieveUserPresenceByDeviceRequest *request, ::presence::RetrieveUserPresenceByDeviceResponse *response)
@@ -35,5 +36,5 @@ public:
     }
 
 private:
-    std::shared_ptr<PresenceCache> presence_cache_;
+    std::unique_ptr<PresenceRetrieverService> service_;
 };

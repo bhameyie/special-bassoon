@@ -6,6 +6,7 @@
 #include "presence.pb.h"
 #include "presence.grpc.pb.h"
 #include "presence_cache.h"
+#include "presence_recorder_service.h"
 
 using grpc::Server;
 using grpc::ServerBuilder;
@@ -17,20 +18,20 @@ using namespace std;
 
 class PresenceRecorderImpl final : public PresenceRecorder::Service
 {
-    
+
 public:
-    PresenceRecorderImpl(shared_ptr<PresenceCache> cache)
+    PresenceRecorderImpl(std::unique_ptr<PresenceRecorderService> service)
     {
-        presence_cache_ = cache;
+        service_ = std::move(service);
     }
 
-    Status UpdateStatus(::grpc::ServerContext *context,
-                        const ::presence::UpdateUserConnectionRequest *request,
-                        ::presence::UpdateUserConnectionReply *response)
+    grpc::Status UpdateStatus(::grpc::ServerContext *context,
+                              const ::presence::UpdateUserConnectionRequest *request,
+                              ::presence::UpdateUserConnectionReply *response)
     {
         return Status::OK;
     }
 
 private:
-    std::shared_ptr<PresenceCache> presence_cache_;
+    std::unique_ptr<PresenceRecorderService> service_;
 };
