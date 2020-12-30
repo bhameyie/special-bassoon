@@ -17,5 +17,5 @@ protected:
 };
 
 TEST_F(PresenceCacheShould, HoldNoDataInitially){
-    
+
 }

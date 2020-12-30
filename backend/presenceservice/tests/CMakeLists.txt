@@ -15,7 +15,12 @@ cmake_policy(SET CMP0079 NEW)
 ################################
 include(GoogleTest)# Add test cpp file
 
-add_executable(presenceservicetest testgtest.cpp presence_cache_tests  )
+add_executable(presenceservicetest 
+testgtest.cpp 
+presence_cache_tests.cpp 
+presence_retriever_tests.cpp 
+presence_recorder_tests.cpp 
+presence_cache_mock.h)
 
 target_compile_features(presenceservicetest PRIVATE cxx_std_17)
 
@@ -30,7 +35,8 @@ target_include_directories (
     ${CMAKE_CURRENT_SOURCE_DIR}/../src
 )
 # Link test executable against gtest & gtest_main
-target_link_libraries(presenceservicetest PRIVATE gtest gtest_main  ${_REFLECTION}
+target_link_libraries(presenceservicetest PRIVATE gtest gmock gtest_main gmock_main
+        ${_REFLECTION}
         ${_GRPC_GRPCPP}
         ${_PROTOBUF_LIBPROTOBUF})
 #gtest_add_tests(TARGET presenceservicetest TEST_PREFIX old:)
