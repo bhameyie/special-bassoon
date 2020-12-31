@@ -6,7 +6,6 @@
 #include "service_models.h"
 #include <optional>
 #include <memory>
-
 class PresenceCacheMock : public PresenceCache {
  public:
   MOCK_METHOD(UpdatedPresence, UpdatePresence, (const PresenceUpdate update), (const,override));

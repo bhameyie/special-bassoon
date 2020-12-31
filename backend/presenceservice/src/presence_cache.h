@@ -6,12 +6,14 @@
 #include <utility>
 #include <memory>
 #include "service_models.h"
-#include <optional>
-
 
 using namespace std;
 
-typedef map<string, map<string, pair<unsigned int, long>>> MemoryCache;
+typedef pair<unsigned int, long> StatusTimestamp;
+
+typedef map<string, StatusTimestamp> DeviceMapping;
+
+typedef map<string, DeviceMapping> MemoryCache;
 
 
 class PresenceCache

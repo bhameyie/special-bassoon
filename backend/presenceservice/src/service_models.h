@@ -5,21 +5,21 @@
 
 struct UpdatedPresence
 {
-    unsigned int status_id;
     std::string user_id;
+    unsigned int status_id;
 };
 
 struct RecordedPresence{
-    std::string device_id;
     std::string user_id;
+    std::string device_id;
     unsigned int status_id;
     long last_seen_timestamp;
 };
 
 struct PresenceUpdate
 {
-    std::string device_id;
     std::string user_id;
+    std::string device_id;
     unsigned int status_id;
     long last_seen_timestamp;
 };
