@@ -3,6 +3,7 @@
 #include <shared_mutex>
 #include <memory>
 #include <optional>
+#include <vector>
 
 using namespace std;
 
@@ -62,15 +63,78 @@ public:
             update.status_id};
     }
 
-    unique_ptr<vector<RecordedPresence>> GetAllByUserId(const string userId) const override
+    std::vector<std::unique_ptr<RecordedPresence>> GetAllByUserId(const string userId) override
     {
         std::shared_lock lock(mutex_);
-        return nullptr;
+
+        std::vector<std::unique_ptr<RecordedPresence>> items;
+
+        auto existingItem = cache_->find(userId);
+
+        if (existingItem != cache_->end())
+        {
+            for (auto const &x : existingItem->second)
+            {
+                items.push_back(std::make_unique<RecordedPresence>(RecordedPresence{
+                    existingItem->first,
+                    x.first,
+                    x.second.first,
+                    x.second.second}));
+            }
+        }
+
+        return items;
+    }
+
+    optional<RecordedPresence> GetLatestById(const string userId) const override
+    {
+        std::shared_lock lock(mutex_);
+
+        auto existingItem = cache_->find(userId);
+        if (existingItem != cache_->end())
+        {
+            long max = -1;
+            string device;
+            for (auto const &[key, val] : existingItem->second)
+            {
+                if (val.second > max)
+                {
+                    device = key;
+                    max = val.second;
+                }
+            }
+
+            RecordedPresence record;
+            record.device_id = device;
+            record.user_id = existingItem->first;
+            record.last_seen_timestamp = max;
+            record.status_id = existingItem->second[device].first;
+            
+            return record;
+        }
+        return {};
     }
 
     optional<RecordedPresence> Get(const string userId, const string deviceId) const override
     {
         std::shared_lock lock(mutex_);
+
+        auto userDictionary = cache_->find(userId);
+        if (userDictionary != cache_->end())
+        {
+            auto deviceRecord = userDictionary->second.find(deviceId);
+
+            if (deviceRecord != userDictionary->second.end())
+            {
+                RecordedPresence record;
+                record.device_id = deviceId;
+                record.user_id = userId;
+                record.last_seen_timestamp = deviceRecord->second.second;
+                record.status_id = deviceRecord->second.first;
+
+                return record;
+            }
+        }
         return {};
     }
 

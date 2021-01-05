@@ -1,5 +1,6 @@
 
 #include "gtest/gtest.h"
+#include "presence_cache.h"
 #include "presence_cache_mock.h"
 #include "presence_cache.cpp"
 #include "presence_recorder.cpp"

@@ -15,7 +15,6 @@ typedef map<string, StatusTimestamp> DeviceMapping;
 
 typedef map<string, DeviceMapping> MemoryCache;
 
-
 class PresenceCache
 {
 
@@ -25,7 +24,8 @@ public:
     
     //TODO: find how to make things "internal" like in C#
     virtual shared_ptr<MemoryCache> Get() const = 0;
-    virtual unique_ptr<vector<RecordedPresence>> GetAllByUserId(const string userId) const = 0;
+    virtual std::vector<std::unique_ptr<RecordedPresence>> GetAllByUserId(const string userId) = 0;
+    virtual optional<RecordedPresence> GetLatestById(const string userId) const = 0;
     virtual optional<RecordedPresence> Get(const string userId, const string deviceId) const = 0;
 
 protected:
