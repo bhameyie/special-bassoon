@@ -29,7 +29,8 @@ include_directories("gen")
 
 add_library(presenceservicelib 
 presence_cache.cpp 
-Yello.cpp 
+Yello.cpp
+utils.cpp 
 presence_retriever.cpp 
 presence_recorder.cpp 
 presence_retriever_service.cpp
@@ -38,6 +39,7 @@ presence_recorder_service.cpp
 presence_recorder_service.h
 service_models.h 
 presence_cache.h   
+utils.h
 service_runner.cpp
 ${hw_proto_srcs} 
 ${hw_grpc_srcs})

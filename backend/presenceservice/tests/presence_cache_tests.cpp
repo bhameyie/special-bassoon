@@ -1,9 +1,12 @@
 #include "gtest/gtest.h"
+#include "utils.cpp"
 #include "presence_cache.cpp"
 #include <thread>
 #include <optional>
 #include <algorithm>
 #include <vector>
+
+long currentTime = getCurrentTimestamp();
 
 TEST(PresenceCacheShould, HoldNoDataInitially)
 {
@@ -15,7 +18,7 @@ TEST(PresenceCacheShould, HoldNoDataInitially)
 TEST(PresenceCacheShould, RecordInserts)
 {
     const PresenceUpdate update{
-        "kaboom", "elDevice", 1, 1609378878117};
+        "kaboom", "elDevice", 1, currentTime};
 
     const UpdatedPresence expected{
         "kaboom", 1};
@@ -30,10 +33,10 @@ TEST(PresenceCacheShould, RecordInserts)
 TEST(PresenceCacheShould, AllowForMultipleDevicesPerUserWithTheSameStatus)
 {
     const PresenceUpdate elDevice{
-        "Remy", "elDevice", 2, 1609378878117};
+        "Remy", "elDevice", 2, currentTime};
 
     const PresenceUpdate leDevice_updated{
-        "Remy", "leDevice", 2, 1609378878117};
+        "Remy", "leDevice", 2, currentTime};
 
     const UpdatedPresence expected{
         "Remy", 2};
@@ -51,10 +54,10 @@ TEST(PresenceCacheShould, AllowForMultipleDevicesPerUserWithTheSameStatus)
 TEST(PresenceCacheShould, AlwaysReturnTheMostRecentTimestamp)
 {
     const PresenceUpdate elDevice{
-        "Remy", "elDevice", 3, 1619378879117};
+        "Remy", "elDevice", 3, currentTime + 1000};
 
     const PresenceUpdate leDevice_updated{
-        "Remy", "leDevice", 2, 1609378878207};
+        "Remy", "leDevice", 2, currentTime};
 
     const UpdatedPresence expected{
         "Remy", 3};
@@ -70,13 +73,13 @@ TEST(PresenceCacheShould, AlwaysReturnTheMostRecentTimestamp)
 TEST(PresenceCacheShould, ReplaceAlreadyExistingRecords)
 {
     const PresenceUpdate elDevice{
-        "kaboom", "elDevice", 1, 1609378878117};
+        "kaboom", "elDevice", 1, currentTime};
 
     const PresenceUpdate leDevice{
-        "Remy", "leDevice", 1, 1609378878117};
+        "Remy", "leDevice", 1, currentTime};
 
     const PresenceUpdate leDevice_updated{
-        "Remy", "leDevice", 2, 1609378878117};
+        "Remy", "leDevice", 2, currentTime};
 
     const UpdatedPresence expected{
         "Remy", 2};
@@ -98,17 +101,25 @@ protected:
     void SetUp() override
     {
         const PresenceUpdate c3{
-            "kaboom", "c3", 1, 1609378878117};
+            "kaboom", "c3", 1, currentTime};
 
         const PresenceUpdate a1{
-            "Remy", "a1", 1, 1600378878117};
+            "Remy", "a1", 1, currentTime};
 
         const PresenceUpdate b2{
-            "Remy", "b2", 2, 1609378878117};
+            "Remy", "b2", 2, currentTime+1000};
+
+        const PresenceUpdate e5{
+            "Remy", "e5", 2, currentTime - 5*60*1000 - 1};
+
+        const PresenceUpdate e6{
+            "Ray", "e6", 2, currentTime - 5*60*1000 - 1};
 
         sutRetrieval_.UpdatePresence(c3);
         sutRetrieval_.UpdatePresence(b2);
         sutRetrieval_.UpdatePresence(a1);
+        sutRetrieval_.UpdatePresence(e5);
+        sutRetrieval_.UpdatePresence(e6);
     }
 
     PresenceCacheImpl sutRetrieval_;
@@ -159,7 +170,7 @@ TEST_F(PresenceCacheRetrievalShould, RetrieveSingleStatusByDeviceIdWhenOneExists
     EXPECT_EQ("kaboom", inner.user_id);
     EXPECT_EQ("c3", inner.device_id);
     EXPECT_EQ(1, inner.status_id);
-    EXPECT_EQ(1609378878117, inner.last_seen_timestamp);
+    EXPECT_EQ(currentTime, inner.last_seen_timestamp);
 }
 
 TEST_F(PresenceCacheRetrievalShould, ReturnNothingWhenRetrieveSingleStatusByDeviceIdAndNoneExists)
@@ -167,4 +178,27 @@ TEST_F(PresenceCacheRetrievalShould, ReturnNothingWhenRetrieveSingleStatusByDevi
     EXPECT_FALSE(sutRetrieval_.GetLatestById("nada").has_value());
     EXPECT_FALSE(sutRetrieval_.Get("nada", "c3").has_value());
     EXPECT_FALSE(sutRetrieval_.Get("kaboom", "boom").has_value());
+}
+
+TEST_F(PresenceCacheRetrievalShould, RemovesUserCompletelyWhenAllDevicesInactiveOnGetLatestById)
+{
+    EXPECT_EQ(1, sutRetrieval_.Get()->at("Ray").size());
+    EXPECT_FALSE( sutRetrieval_.GetLatestById("Ray").has_value());
+}
+
+TEST_F(PresenceCacheRetrievalShould, EvictDevicesWhenDataIsOlderThan5MinutesOnGetLatestById)
+{
+    EXPECT_EQ(3, sutRetrieval_.Get()->at("Remy").size());
+    sutRetrieval_.GetLatestById("Remy");
+    EXPECT_EQ(2, sutRetrieval_.Get()->at("Remy").size());
+}
+
+TEST_F(PresenceCacheRetrievalShould, RemovesUserCompletelyWhenAllDevicesInactiveOnGet)
+{
+    EXPECT_FALSE( sutRetrieval_.Get("Ray", "e6").has_value());
+}
+
+TEST_F(PresenceCacheRetrievalShould, EvictDevicesWhenDataIsOlderThan5MinutesOnGet)
+{
+    EXPECT_FALSE( sutRetrieval_.Get("Remy", "e5").has_value());
 }

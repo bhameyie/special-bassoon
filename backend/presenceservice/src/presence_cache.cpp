@@ -1,9 +1,11 @@
 #include "presence_cache.h"
 #include "service_models.h"
+#include "utils.h"
 #include <shared_mutex>
 #include <memory>
 #include <optional>
 #include <vector>
+#include <unordered_set>
 
 using namespace std;
 
@@ -11,6 +13,12 @@ class PresenceCacheImpl : public PresenceCache
 {
 private:
     mutable std::shared_mutex mutex_;
+
+    static bool ShouldEvict(const long timestamp)
+    {
+        int threshold = 5 * 60 * 1000; //5 minutes
+        return timestamp < getCurrentTimestamp() - threshold;
+    }
 
 public:
     PresenceCacheImpl()
@@ -34,9 +42,8 @@ public:
         }
         else
         {
-            auto existingDeviceMapping = existingItem->second.find(update.user_id);
-
-            existingItem->second.insert_or_assign(update.device_id, StatusTimestamp{update.status_id, update.last_seen_timestamp});
+            existingItem->second.insert_or_assign(update.device_id,
+                                                  StatusTimestamp{update.status_id, update.last_seen_timestamp});
 
             int deviceCount = existingItem->second.size();
             if (deviceCount > 1)
@@ -53,14 +60,16 @@ public:
                 }
 
                 return UpdatedPresence{
-                    update.user_id,
-                    status};
+                        update.user_id,
+                        status
+                };
             }
         }
 
         return UpdatedPresence{
-            update.user_id,
-            update.status_id};
+                update.user_id,
+                update.status_id
+        };
     }
 
     std::vector<std::unique_ptr<RecordedPresence>> GetAllByUserId(const string userId) override
@@ -73,14 +82,33 @@ public:
 
         if (existingItem != cache_->end())
         {
+            std::unordered_set<std::string> devicesForEviction;
             for (auto const &x : existingItem->second)
             {
-                items.push_back(std::make_unique<RecordedPresence>(RecordedPresence{
-                    existingItem->first,
-                    x.first,
-                    x.second.first,
-                    x.second.second}));
+                if (ShouldEvict(x.second.second))
+                {
+                    devicesForEviction.insert(x.first);
+                }
+                else
+                {
+                    items.push_back(std::make_unique<RecordedPresence>(RecordedPresence{
+                            existingItem->first,
+                            x.first,
+                            x.second.first,
+                            x.second.second
+                    }));
+                }
             }
+            for (auto const &deviceName : devicesForEviction)
+            {
+                auto forEviction = existingItem->second.find(deviceName);
+                existingItem->second.erase(forEviction);
+            }
+            if (existingItem->second.empty())
+            {
+                cache_->erase(existingItem);
+            }
+
         }
 
         return items;
@@ -93,15 +121,39 @@ public:
         auto existingItem = cache_->find(userId);
         if (existingItem != cache_->end())
         {
+            std::unordered_set<std::string> devicesForEviction;
+
             long max = -1;
             string device;
+
             for (auto const &[key, val] : existingItem->second)
             {
-                if (val.second > max)
+                if (ShouldEvict(val.second))
+                {
+                    devicesForEviction.insert(key);
+                }
+                else if (val.second > max)
                 {
                     device = key;
                     max = val.second;
                 }
+            }
+
+            for (auto const &deviceName : devicesForEviction)
+            {
+                auto forEviction = existingItem->second.find(deviceName);
+                existingItem->second.erase(forEviction);
+            }
+
+            if (existingItem->second.empty())
+            {
+                cache_->erase(existingItem);
+                return {};
+            }
+
+            if (max == -1)
+            {
+                return {};
             }
 
             RecordedPresence record;
@@ -109,9 +161,10 @@ public:
             record.user_id = existingItem->first;
             record.last_seen_timestamp = max;
             record.status_id = existingItem->second[device].first;
-            
+
             return record;
         }
+
         return {};
     }
 
@@ -126,6 +179,16 @@ public:
 
             if (deviceRecord != userDictionary->second.end())
             {
+                if (ShouldEvict(deviceRecord->second.second))
+                {
+                    userDictionary->second.erase(deviceRecord);
+                    if (userDictionary->second.empty())
+                    {
+                        cache_->erase(userDictionary);
+                    }
+                    return {};
+                }
+
                 RecordedPresence record;
                 record.device_id = deviceId;
                 record.user_id = userId;
