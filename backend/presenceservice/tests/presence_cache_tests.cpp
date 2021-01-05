@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <vector>
 
-long currentTime = getCurrentTimestamp();
+long currentTime = GetCurrentTimestamp();
 
 TEST(PresenceCacheShould, HoldNoDataInitially)
 {
@@ -189,7 +189,7 @@ TEST_F(PresenceCacheRetrievalShould, RemovesUserCompletelyWhenAllDevicesInactive
 TEST_F(PresenceCacheRetrievalShould, EvictDevicesWhenDataIsOlderThan5MinutesOnGetLatestById)
 {
     EXPECT_EQ(3, sutRetrieval_.Get()->at("Remy").size());
-    sutRetrieval_.GetLatestById("Remy");
+   auto meh= sutRetrieval_.GetLatestById("Remy");
     EXPECT_EQ(2, sutRetrieval_.Get()->at("Remy").size());
 }
 
