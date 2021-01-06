@@ -20,14 +20,14 @@ class PresenceRecorderImpl final : public PresenceRecorder::Service
 {
 
 public:
-    PresenceRecorderImpl(std::unique_ptr<PresenceRecorderService> service)
+    explicit PresenceRecorderImpl(std::unique_ptr<PresenceRecorderService> service)
     {
         service_ = std::move(service);
     }
 
     grpc::Status UpdateStatus(::grpc::ServerContext *context,
                               const ::presence::UpdateUserConnectionRequest *request,
-                              ::presence::UpdateUserConnectionReply *response)
+                              ::presence::UpdateUserConnectionReply *response) override
     {
         return Status::OK;
     }

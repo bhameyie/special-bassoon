@@ -100,6 +100,7 @@ class PresenceCacheImpl : public PresenceCache {
     std::shared_lock lock(mutex_);
 
     auto existingItem = cache_->find(userId);
+
     if (existingItem != cache_->end()) {
       std::unordered_set<std::string> devicesForEviction;
 
@@ -122,7 +123,6 @@ class PresenceCacheImpl : public PresenceCache {
 
       if (existingItem->second.empty()) {
         cache_->erase(existingItem);
-        return {};
       }
 
       if (max == -1) {
@@ -143,7 +143,6 @@ class PresenceCacheImpl : public PresenceCache {
 
   optional<RecordedPresence> Get(const string userId, const string deviceId) const override {
     std::shared_lock lock(mutex_);
-
     auto userDictionary = cache_->find(userId);
     if (userDictionary != cache_->end()) {
       auto deviceRecord = userDictionary->second.find(deviceId);
