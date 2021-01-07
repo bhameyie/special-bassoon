@@ -27,22 +27,26 @@ add_custom_command(
 
 include_directories("gen")
 
-add_library(presenceservicelib 
-presence_cache.cpp 
-Yello.cpp
-utils.cpp 
-presence_retriever.cpp 
-presence_recorder.cpp 
-presence_retriever_service.cpp
-presence_retriever_service.h
-presence_recorder_service.cpp
-presence_recorder_service.h
-service_models.h 
-presence_cache.h   
-utils.h
-service_runner.cpp
-${hw_proto_srcs} 
-${hw_grpc_srcs})
+add_library(presenceservicelib
+        presence_cache.cpp
+        utils.cpp
+        presence_retriever.cpp
+        presence_recorder.cpp
+        presence_retriever_service.cpp
+        presence_retriever_service.h
+        presence_recorder_service.cpp
+        presence_recorder_service.h
+        service_models.h
+        presence_cache.h
+        utils.h
+        service_runner.cpp
+        ${hw_grpc_hdrs}
+        ${hw_proto_hdrs}
+        ${hw_proto_srcs}
+        ${hw_grpc_srcs})
+
+set_target_properties(presenceservicelib PROPERTIES PUBLIC_HEADER
+        "service_models.h;presence_cache.h;utils.h;${hw_grpc_hdrs};${hw_proto_hdrs}")
 
 target_link_libraries(presenceservicelib PRIVATE Boost::boost
         ${_REFLECTION}
@@ -53,6 +57,9 @@ add_executable(presenceservice main.cpp)
 
 target_compile_features(presenceservice PRIVATE cxx_std_17)
 
-target_link_libraries(presenceservice PRIVATE presenceservicelib fmt::fmt  ${_REFLECTION}
+target_link_libraries(presenceservice PRIVATE
+        presenceservicelib
+        fmt::fmt
+        ${_REFLECTION}
         ${_GRPC_GRPCPP}
         ${_PROTOBUF_LIBPROTOBUF})

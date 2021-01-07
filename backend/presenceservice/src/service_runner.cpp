@@ -2,6 +2,7 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <utility>
 
 #include <grpcpp/grpcpp.h>
 #include <grpcpp/health_check_service_interface.h>
@@ -19,9 +20,9 @@ class ServiceRunner
 {
 
 public:
-    ServiceRunner(string serverAddress)
+    explicit ServiceRunner(string serverAddress)
     {
-        server_address_ = serverAddress;
+        server_address_ = std::move(serverAddress);
     }
 
     std::unique_ptr<Server> Run()

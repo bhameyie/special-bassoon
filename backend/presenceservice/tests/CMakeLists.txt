@@ -1,13 +1,5 @@
-# Build output setup
-#set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/test/lib)
-#set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/test/lib)
-#set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/test/bin)
 
-################################
-# GTest
-################################
-#project(googletest-git NONE)
-project(presenceservicetesting)
+project(presenceservicetesting C CXX)
 cmake_policy(SET CMP0079 NEW)
 
 ################################
@@ -15,29 +7,26 @@ cmake_policy(SET CMP0079 NEW)
 ################################
 include(GoogleTest)# Add test cpp file
 
-add_executable(presenceservicetest 
-testgtest.cpp 
-presence_cache_tests.cpp 
-presence_retriever_tests.cpp 
-presence_recorder_tests.cpp 
-presence_cache_mock.h)
+include_directories("../src")
+include_directories("../src/gen")
 
+add_executable(presenceservicetest
+        presence_cache_tests.cpp
+        presence_retriever_service_tests.cpp
+        presence_recorder_service_tests.cpp
+        presence_cache_mock.h)
+
+#include_directories("g")
 target_compile_features(presenceservicetest PRIVATE cxx_std_17)
 
-add_test(NAME presenceservicecheck COMMAND presenceservicetest) # Command can be a target
-set_tests_properties(presenceservicecheck PROPERTIES
-    ENVIRONMENT "TEST_FILE=all"
-)
-target_include_directories (
-    presenceservicetest
-    PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/../src/gen
-    ${CMAKE_CURRENT_SOURCE_DIR}/../src
-)
 # Link test executable against gtest & gtest_main
-target_link_libraries(presenceservicetest PRIVATE gtest gmock gtest_main gmock_main
+target_link_libraries(presenceservicetest PUBLIC
+        presenceservicelib
+        gtest gmock gtest_main gmock_main
         ${_REFLECTION}
         ${_GRPC_GRPCPP}
-        ${_PROTOBUF_LIBPROTOBUF})
-#gtest_add_tests(TARGET presenceservicetest TEST_PREFIX old:)
+        ${_PROTOBUF_LIBPROTOBUF}
+        )
+
 gtest_discover_tests(presenceservicetest)
+add_test(NAME presenceservicecheck COMMAND presenceservicetest) # Command can be a target
