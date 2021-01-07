@@ -1,19 +1,19 @@
 #include <iostream>
-#include "Yello.cpp"
 #include <fmt/format.h>
 #include "service_runner.cpp"
 #include "presence_recorder_service.cpp"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-        
-    fmt::print("Meh: {}\n",  meh(3));
+  std::cout << "Hello, World!" << std::endl;
 
-    ServiceRunner runner("0.0.0.0:50051");
+  //UpdateUserConnectionRequest req;
+  fmt::print("Meh: {}\n", meh(3));
 
-    auto server = runner.Run();
+  ServiceRunner runner("0.0.0.0:50051");
 
-   // server->Wait();
+  auto server = runner.Run();
 
-    return 0;
+  server->Wait();
+
+  return 0;
 }

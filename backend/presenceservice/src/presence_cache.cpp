@@ -13,7 +13,7 @@ class PresenceCacheImpl : public PresenceCache {
  private:
   mutable std::shared_mutex mutex_;
 
-  static bool ShouldEvict(const long timestamp) {
+  static bool ShouldEvict(const long &timestamp) {
     int threshold = 5 * 60 * 1000; //5 minutes
     return timestamp < GetCurrentTimestamp() - threshold;
   }
@@ -23,7 +23,8 @@ class PresenceCacheImpl : public PresenceCache {
     cache_ = std::make_shared<MemoryCache>();
   }
 
-  UpdatedPresence UpdatePresence(const PresenceUpdate update) const override {
+
+  UpdatedPresence UpdatePresence(const PresenceUpdate &update) const override {
     std::unique_lock lock(mutex_);
 
     auto existingItem = cache_->find(update.user_id);
@@ -62,7 +63,7 @@ class PresenceCacheImpl : public PresenceCache {
     };
   }
 
-  std::vector<std::unique_ptr<RecordedPresence>> GetAllByUserId(const string userId) override {
+  std::vector<std::unique_ptr<RecordedPresence>> GetAllByUserId(const string &userId) override {
     std::shared_lock lock(mutex_);
 
     std::vector<std::unique_ptr<RecordedPresence>> items;
@@ -96,7 +97,7 @@ class PresenceCacheImpl : public PresenceCache {
     return items;
   }
 
-  optional<RecordedPresence> GetLatestById(const string userId) const override {
+  optional<RecordedPresence> GetLatestById(const string &userId) const override {
     std::shared_lock lock(mutex_);
 
     auto existingItem = cache_->find(userId);
@@ -141,7 +142,7 @@ class PresenceCacheImpl : public PresenceCache {
     return {};
   }
 
-  optional<RecordedPresence> Get(const string userId, const string deviceId) const override {
+  optional<RecordedPresence> Get(const string &userId, const string &deviceId) const override {
     std::shared_lock lock(mutex_);
     auto userDictionary = cache_->find(userId);
     if (userDictionary != cache_->end()) {

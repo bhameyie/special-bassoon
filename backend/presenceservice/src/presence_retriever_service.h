@@ -14,7 +14,7 @@ private:
     std::shared_ptr<PresenceCache> presence_cache_;
 
 public:
-    PresenceRetrieverService(std::shared_ptr<PresenceCache> cache) ;
+    explicit PresenceRetrieverService(std::shared_ptr<PresenceCache> cache) ;
 
     ~PresenceRetrieverService();
     

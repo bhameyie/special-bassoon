@@ -1,5 +1,6 @@
 #include <memory>
 #include <iostream>
+#include <utility>
 #include "presence_cache.h"
 
 #include "presence.pb.h"
@@ -8,9 +9,8 @@
 
 PresenceRetrieverService::PresenceRetrieverService(std::shared_ptr<PresenceCache> cache)
 {
-    presence_cache_ = cache;
+    presence_cache_ = std::move(cache);
 }
 
 PresenceRetrieverService::~PresenceRetrieverService()
-{
-}
+= default;

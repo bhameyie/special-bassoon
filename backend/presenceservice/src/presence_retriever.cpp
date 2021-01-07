@@ -20,17 +20,17 @@ class PresenceRetrieverImpl final : public PresenceRetriever::Service
 {
 
 public:
-    PresenceRetrieverImpl(std::unique_ptr<PresenceRetrieverService> service)
+    explicit PresenceRetrieverImpl(std::unique_ptr<PresenceRetrieverService> service)
     {
         service_ = std::move(service);
     }
 
-    grpc::Status RetrieveUserPresenceByDevice(::grpc::ServerContext *context, const ::presence::RetrieveUserPresenceByDeviceRequest *request, ::presence::RetrieveUserPresenceByDeviceResponse *response)
+    grpc::Status RetrieveUserPresenceByDevice(::grpc::ServerContext *context, const ::presence::RetrieveUserPresenceByDeviceRequest *request, ::presence::RetrieveUserPresenceByDeviceResponse *response) override
     {
         return Status::OK;
     }
 
-    grpc::Status RetrieveUserPresenceById(::grpc::ServerContext *context, const ::presence::RetrieveUserPresenceByIdRequest *request, ::presence::RetrieveUserPresenceByIdResponce *response)
+    grpc::Status RetrieveUserPresenceById(::grpc::ServerContext *context, const ::presence::RetrieveUserPresenceByIdRequest *request, ::presence::RetrieveUserPresenceByIdResponce *response) override
     {
         return Status::OK;
     }

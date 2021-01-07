@@ -16,22 +16,20 @@ using grpc::Status;
 using namespace presence;
 using namespace std;
 
-class PresenceRecorderImpl final : public PresenceRecorder::Service
-{
+class PresenceRecorderImpl final : public PresenceRecorder::Service {
 
-public:
-    explicit PresenceRecorderImpl(std::unique_ptr<PresenceRecorderService> service)
-    {
-        service_ = std::move(service);
-    }
+ public:
+  explicit PresenceRecorderImpl(std::unique_ptr<PresenceRecorderService> service) {
+    service_ = std::move(service);
+  }
 
-    grpc::Status UpdateStatus(::grpc::ServerContext *context,
-                              const ::presence::UpdateUserConnectionRequest *request,
-                              ::presence::UpdateUserConnectionReply *response) override
-    {
-        return Status::OK;
-    }
+  grpc::Status UpdateStatus(::grpc::ServerContext *context,
+                            const ::presence::UpdateUserConnectionRequest *request,
+                            ::presence::UpdateUserConnectionReply *response) override {
 
-private:
-    std::unique_ptr<PresenceRecorderService> service_;
+    return Status::OK;
+  }
+
+ private:
+  std::unique_ptr<PresenceRecorderService> service_;
 };
