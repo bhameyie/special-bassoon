@@ -4,7 +4,7 @@
 #include <utility>
 #include <variant>
 #include "presence_cache.h"
-
+#include "service_models.h"
 #include "presence.pb.h"
 #include "presence.grpc.pb.h"
 #include "presence_recorder_service.h"
@@ -15,15 +15,30 @@ PresenceRecorderService::PresenceRecorderService(std::shared_ptr<PresenceCache> 
 
 PresenceRecorderService::~PresenceRecorderService() = default;
 
-std::variant<UpdatedPresence,OperationFailure> PresenceRecorderService::UpdateStatus(const presence::UpdateUserConnectionRequest &request) const {
+std::variant<UpdatedPresence,
+             OperationFailure> PresenceRecorderService::UpdateStatus(
+                 const presence::UpdateUserConnectionRequest &request) const {
   /*TODO: Fire event and other niceties
-  - send an event in a topic of somekind for analysis of when the user typically comes on
+  - validate user credentials
+  - validate no nulls
+  - send an event in a topic of some kind for analysis of when the user typically comes on
       - should be done in a separate task/thread so to not hold anything up
   */
-  std::variant<UpdatedPresence,OperationFailure> toReturn;
+  const auto convertedRequest = PresenceUpdate{
+      request.user_id(),
+      request.device_id(),
+      (unsigned int) request.status(),
+      request.last_seen_timestamp()
+  };
 
-  toReturn = OperationFailure("meh", OperationFailureCode::NONE);
-  return toReturn;
+  try {
+    return presence_cache_->UpdatePresence(convertedRequest);
+  }
+  catch(const std::exception &ex) {
+    //todo: log here
+    return OperationFailure("Unexpected error while updating the cache",
+                                OperationFailureCode::NONE);
+  }
 }
 
 

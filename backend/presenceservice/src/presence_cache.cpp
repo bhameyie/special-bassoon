@@ -176,6 +176,7 @@ class PresenceCacheImpl : public PresenceCache {
 * @return shared_ptr<MemoryCache>
 */
   shared_ptr<MemoryCache> Get() const override {
+    //todo: leverage redis and eventing
     return cache_;
   }
 };

@@ -2,7 +2,6 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 
-
 #include "presence_cache.h"
 #include "presence_cache_mock.h"
 #include "presence_cache.cpp"
@@ -20,9 +19,10 @@ using grpc::Status;
 
 using ::testing::_;
 using ::testing::Ref;
+using ::testing::Eq;
 using ::testing::Return;
 using ::testing::Throw;
-
+using ::testing::Mock;
 using namespace presence;
 using namespace grpc;
 
@@ -31,30 +31,81 @@ using namespace grpc;
  * test scenario where an exception occurs
  */
 
-TEST(PresenceRecorderServiceShould, HoldNoDataInitially) {
-  PresenceCacheMock cache;
+struct SomeException : public exception {
 
-  const std::shared_ptr<PresenceCache> mock = std::shared_ptr<PresenceCacheMock>(&cache);
-  //google::protobuf::Arena p;
+};
+
+class PresenceRecorderServiceShould : public ::testing::Test {
+ protected:
+  std::shared_ptr<PresenceCacheMock> cache_ = std::make_shared<PresenceCacheMock>();
+};
+
+TEST_F(PresenceRecorderServiceShould, ReturnUpdatedPresenceWhenNoErrorOccurs) {
+
   UpdateUserConnectionRequest req;
   req.set_device_id("dev");
+  req.set_user_id("u1");
   req.set_status(ConnectionStatus::AWAY);
   req.set_last_seen_timestamp(23L);
 
-  auto update = UpdatedPresence();
+  auto update = PresenceUpdate();
   update.status_id = 2;
-  update.user_id = "dev";
+  update.device_id = "dev";
+  update.user_id = "u1";
+  update.last_seen_timestamp = 23L;
 
   const auto updated = UpdatedPresence{
       "user1",
       1
   };
 
-  EXPECT_CALL(cache, UpdatePresence(_))
+  EXPECT_CALL(*cache_, UpdatePresence(_))
       .WillOnce(Return(updated));
 
-  auto sut = PresenceRecorderService(mock);
+  PresenceRecorderService sut(cache_);
   auto result = sut.UpdateStatus(req);
 
   EXPECT_TRUE(std::holds_alternative<UpdatedPresence>(result));
+  EXPECT_EQ(std::get<UpdatedPresence>(result), updated);
+
+  EXPECT_TRUE(Mock::VerifyAndClearExpectations(cache_.get()));
+}
+
+TEST_F(PresenceRecorderServiceShould, ReturnOperationFailureWhenUserIdIsNull) {
+  EXPECT_TRUE(false);
+}
+
+TEST_F(PresenceRecorderServiceShould, ReturnOperationFailureWhenDeviceIdIsNull) {
+
+  EXPECT_TRUE(false);
+}
+
+TEST_F(PresenceRecorderServiceShould, ReturnOperationFailureWhenTimeStampIsLessThan1) {
+
+  EXPECT_TRUE(false);
+}
+
+TEST_F(PresenceRecorderServiceShould, ReturnOperationFailureWhenAnExceptionIsThrown) {
+
+  UpdateUserConnectionRequest req;
+  req.set_device_id("dev");
+  req.set_user_id("u1");
+  req.set_status(ConnectionStatus::AWAY);
+  req.set_last_seen_timestamp(23L);
+
+  auto update = PresenceUpdate();
+  update.status_id = 2;
+  update.device_id = "dev";
+  update.user_id = "u1";
+  update.last_seen_timestamp = 23L;
+
+  EXPECT_CALL(*cache_, UpdatePresence(_))
+      .WillOnce(Throw(SomeException()));
+
+  PresenceRecorderService sut(cache_);
+  auto result = sut.UpdateStatus(req);
+
+  EXPECT_TRUE(std::holds_alternative<OperationFailure>(result));
+
+  EXPECT_TRUE(Mock::VerifyAndClearExpectations(cache_.get()));
 }
