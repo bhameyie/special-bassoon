@@ -83,8 +83,7 @@ PresenceRecorder::Service::~Service() {
 
 
 static const char* PresenceRetriever_method_names[] = {
-  "/presence.PresenceRetriever/RetrieveUserPresenceByDevice",
-  "/presence.PresenceRetriever/RetrieveUserPresenceById",
+  "/presence.PresenceRetriever/RetrieveUserPresenceByUserId",
 };
 
 std::unique_ptr< PresenceRetriever::Stub> PresenceRetriever::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -94,52 +93,28 @@ std::unique_ptr< PresenceRetriever::Stub> PresenceRetriever::NewStub(const std::
 }
 
 PresenceRetriever::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_RetrieveUserPresenceByDevice_(PresenceRetriever_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RetrieveUserPresenceById_(PresenceRetriever_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_RetrieveUserPresenceByUserId_(PresenceRetriever_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status PresenceRetriever::Stub::RetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::presence::RetrieveUserPresenceByDeviceResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::presence::RetrieveUserPresenceByDeviceRequest, ::presence::RetrieveUserPresenceByDeviceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_RetrieveUserPresenceByDevice_, context, request, response);
+::grpc::Status PresenceRetriever::Stub::RetrieveUserPresenceByUserId(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::presence::RetrieveUserPresenceByIdResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::presence::RetrieveUserPresenceByIdRequest, ::presence::RetrieveUserPresenceByIdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_RetrieveUserPresenceByUserId_, context, request, response);
 }
 
-void PresenceRetriever::Stub::experimental_async::RetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest* request, ::presence::RetrieveUserPresenceByDeviceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::presence::RetrieveUserPresenceByDeviceRequest, ::presence::RetrieveUserPresenceByDeviceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RetrieveUserPresenceByDevice_, context, request, response, std::move(f));
+void PresenceRetriever::Stub::experimental_async::RetrieveUserPresenceByUserId(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::presence::RetrieveUserPresenceByIdRequest, ::presence::RetrieveUserPresenceByIdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RetrieveUserPresenceByUserId_, context, request, response, std::move(f));
 }
 
-void PresenceRetriever::Stub::experimental_async::RetrieveUserPresenceByDevice(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest* request, ::presence::RetrieveUserPresenceByDeviceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RetrieveUserPresenceByDevice_, context, request, response, reactor);
+void PresenceRetriever::Stub::experimental_async::RetrieveUserPresenceByUserId(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RetrieveUserPresenceByUserId_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByDeviceResponse>* PresenceRetriever::Stub::PrepareAsyncRetrieveUserPresenceByDeviceRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::presence::RetrieveUserPresenceByDeviceResponse, ::presence::RetrieveUserPresenceByDeviceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_RetrieveUserPresenceByDevice_, context, request);
+::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByIdResponse>* PresenceRetriever::Stub::PrepareAsyncRetrieveUserPresenceByUserIdRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::presence::RetrieveUserPresenceByIdResponse, ::presence::RetrieveUserPresenceByIdRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_RetrieveUserPresenceByUserId_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByDeviceResponse>* PresenceRetriever::Stub::AsyncRetrieveUserPresenceByDeviceRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByIdResponse>* PresenceRetriever::Stub::AsyncRetrieveUserPresenceByUserIdRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncRetrieveUserPresenceByDeviceRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status PresenceRetriever::Stub::RetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::presence::RetrieveUserPresenceByIdResponce* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::presence::RetrieveUserPresenceByIdRequest, ::presence::RetrieveUserPresenceByIdResponce, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_RetrieveUserPresenceById_, context, request, response);
-}
-
-void PresenceRetriever::Stub::experimental_async::RetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponce* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::presence::RetrieveUserPresenceByIdRequest, ::presence::RetrieveUserPresenceByIdResponce, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RetrieveUserPresenceById_, context, request, response, std::move(f));
-}
-
-void PresenceRetriever::Stub::experimental_async::RetrieveUserPresenceById(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponce* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RetrieveUserPresenceById_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByIdResponce>* PresenceRetriever::Stub::PrepareAsyncRetrieveUserPresenceByIdRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::presence::RetrieveUserPresenceByIdResponce, ::presence::RetrieveUserPresenceByIdRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_RetrieveUserPresenceById_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::presence::RetrieveUserPresenceByIdResponce>* PresenceRetriever::Stub::AsyncRetrieveUserPresenceByIdRaw(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncRetrieveUserPresenceByIdRaw(context, request, cq);
+    this->PrepareAsyncRetrieveUserPresenceByUserIdRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -148,36 +123,19 @@ PresenceRetriever::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PresenceRetriever_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< PresenceRetriever::Service, ::presence::RetrieveUserPresenceByDeviceRequest, ::presence::RetrieveUserPresenceByDeviceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](PresenceRetriever::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::presence::RetrieveUserPresenceByDeviceRequest* req,
-             ::presence::RetrieveUserPresenceByDeviceResponse* resp) {
-               return service->RetrieveUserPresenceByDevice(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PresenceRetriever_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< PresenceRetriever::Service, ::presence::RetrieveUserPresenceByIdRequest, ::presence::RetrieveUserPresenceByIdResponce, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< PresenceRetriever::Service, ::presence::RetrieveUserPresenceByIdRequest, ::presence::RetrieveUserPresenceByIdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](PresenceRetriever::Service* service,
              ::grpc::ServerContext* ctx,
              const ::presence::RetrieveUserPresenceByIdRequest* req,
-             ::presence::RetrieveUserPresenceByIdResponce* resp) {
-               return service->RetrieveUserPresenceById(ctx, req, resp);
+             ::presence::RetrieveUserPresenceByIdResponse* resp) {
+               return service->RetrieveUserPresenceByUserId(ctx, req, resp);
              }, this)));
 }
 
 PresenceRetriever::Service::~Service() {
 }
 
-::grpc::Status PresenceRetriever::Service::RetrieveUserPresenceByDevice(::grpc::ServerContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest* request, ::presence::RetrieveUserPresenceByDeviceResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status PresenceRetriever::Service::RetrieveUserPresenceById(::grpc::ServerContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponce* response) {
+::grpc::Status PresenceRetriever::Service::RetrieveUserPresenceByUserId(::grpc::ServerContext* context, const ::presence::RetrieveUserPresenceByIdRequest* request, ::presence::RetrieveUserPresenceByIdResponse* response) {
   (void) context;
   (void) request;
   (void) response;

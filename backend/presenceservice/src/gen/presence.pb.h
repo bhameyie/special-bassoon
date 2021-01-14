@@ -49,7 +49,7 @@ struct TableStruct_presence_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[7]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -60,18 +60,12 @@ namespace presence {
 class PresenceModel;
 class PresenceModelDefaultTypeInternal;
 extern PresenceModelDefaultTypeInternal _PresenceModel_default_instance_;
-class RetrieveUserPresenceByDeviceRequest;
-class RetrieveUserPresenceByDeviceRequestDefaultTypeInternal;
-extern RetrieveUserPresenceByDeviceRequestDefaultTypeInternal _RetrieveUserPresenceByDeviceRequest_default_instance_;
-class RetrieveUserPresenceByDeviceResponse;
-class RetrieveUserPresenceByDeviceResponseDefaultTypeInternal;
-extern RetrieveUserPresenceByDeviceResponseDefaultTypeInternal _RetrieveUserPresenceByDeviceResponse_default_instance_;
 class RetrieveUserPresenceByIdRequest;
 class RetrieveUserPresenceByIdRequestDefaultTypeInternal;
 extern RetrieveUserPresenceByIdRequestDefaultTypeInternal _RetrieveUserPresenceByIdRequest_default_instance_;
-class RetrieveUserPresenceByIdResponce;
-class RetrieveUserPresenceByIdResponceDefaultTypeInternal;
-extern RetrieveUserPresenceByIdResponceDefaultTypeInternal _RetrieveUserPresenceByIdResponce_default_instance_;
+class RetrieveUserPresenceByIdResponse;
+class RetrieveUserPresenceByIdResponseDefaultTypeInternal;
+extern RetrieveUserPresenceByIdResponseDefaultTypeInternal _RetrieveUserPresenceByIdResponse_default_instance_;
 class UpdateUserConnectionReply;
 class UpdateUserConnectionReplyDefaultTypeInternal;
 extern UpdateUserConnectionReplyDefaultTypeInternal _UpdateUserConnectionReply_default_instance_;
@@ -81,10 +75,8 @@ extern UpdateUserConnectionRequestDefaultTypeInternal _UpdateUserConnectionReque
 }  // namespace presence
 PROTOBUF_NAMESPACE_OPEN
 template<> ::presence::PresenceModel* Arena::CreateMaybeMessage<::presence::PresenceModel>(Arena*);
-template<> ::presence::RetrieveUserPresenceByDeviceRequest* Arena::CreateMaybeMessage<::presence::RetrieveUserPresenceByDeviceRequest>(Arena*);
-template<> ::presence::RetrieveUserPresenceByDeviceResponse* Arena::CreateMaybeMessage<::presence::RetrieveUserPresenceByDeviceResponse>(Arena*);
 template<> ::presence::RetrieveUserPresenceByIdRequest* Arena::CreateMaybeMessage<::presence::RetrieveUserPresenceByIdRequest>(Arena*);
-template<> ::presence::RetrieveUserPresenceByIdResponce* Arena::CreateMaybeMessage<::presence::RetrieveUserPresenceByIdResponce>(Arena*);
+template<> ::presence::RetrieveUserPresenceByIdResponse* Arena::CreateMaybeMessage<::presence::RetrieveUserPresenceByIdResponse>(Arena*);
 template<> ::presence::UpdateUserConnectionReply* Arena::CreateMaybeMessage<::presence::UpdateUserConnectionReply>(Arena*);
 template<> ::presence::UpdateUserConnectionRequest* Arena::CreateMaybeMessage<::presence::UpdateUserConnectionRequest>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -624,314 +616,6 @@ class UpdateUserConnectionReply PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class RetrieveUserPresenceByDeviceRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:presence.RetrieveUserPresenceByDeviceRequest) */ {
- public:
-  inline RetrieveUserPresenceByDeviceRequest() : RetrieveUserPresenceByDeviceRequest(nullptr) {}
-  virtual ~RetrieveUserPresenceByDeviceRequest();
-
-  RetrieveUserPresenceByDeviceRequest(const RetrieveUserPresenceByDeviceRequest& from);
-  RetrieveUserPresenceByDeviceRequest(RetrieveUserPresenceByDeviceRequest&& from) noexcept
-    : RetrieveUserPresenceByDeviceRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline RetrieveUserPresenceByDeviceRequest& operator=(const RetrieveUserPresenceByDeviceRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline RetrieveUserPresenceByDeviceRequest& operator=(RetrieveUserPresenceByDeviceRequest&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const RetrieveUserPresenceByDeviceRequest& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const RetrieveUserPresenceByDeviceRequest* internal_default_instance() {
-    return reinterpret_cast<const RetrieveUserPresenceByDeviceRequest*>(
-               &_RetrieveUserPresenceByDeviceRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    3;
-
-  friend void swap(RetrieveUserPresenceByDeviceRequest& a, RetrieveUserPresenceByDeviceRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(RetrieveUserPresenceByDeviceRequest* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(RetrieveUserPresenceByDeviceRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline RetrieveUserPresenceByDeviceRequest* New() const final {
-    return CreateMaybeMessage<RetrieveUserPresenceByDeviceRequest>(nullptr);
-  }
-
-  RetrieveUserPresenceByDeviceRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<RetrieveUserPresenceByDeviceRequest>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const RetrieveUserPresenceByDeviceRequest& from);
-  void MergeFrom(const RetrieveUserPresenceByDeviceRequest& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(RetrieveUserPresenceByDeviceRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "presence.RetrieveUserPresenceByDeviceRequest";
-  }
-  protected:
-  explicit RetrieveUserPresenceByDeviceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_presence_2eproto);
-    return ::descriptor_table_presence_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kUserIdFieldNumber = 1,
-    kDeviceIdFieldNumber = 2,
-  };
-  // string user_id = 1;
-  void clear_user_id();
-  const std::string& user_id() const;
-  void set_user_id(const std::string& value);
-  void set_user_id(std::string&& value);
-  void set_user_id(const char* value);
-  void set_user_id(const char* value, size_t size);
-  std::string* mutable_user_id();
-  std::string* release_user_id();
-  void set_allocated_user_id(std::string* user_id);
-  private:
-  const std::string& _internal_user_id() const;
-  void _internal_set_user_id(const std::string& value);
-  std::string* _internal_mutable_user_id();
-  public:
-
-  // string device_id = 2;
-  void clear_device_id();
-  const std::string& device_id() const;
-  void set_device_id(const std::string& value);
-  void set_device_id(std::string&& value);
-  void set_device_id(const char* value);
-  void set_device_id(const char* value, size_t size);
-  std::string* mutable_device_id();
-  std::string* release_device_id();
-  void set_allocated_device_id(std::string* device_id);
-  private:
-  const std::string& _internal_device_id() const;
-  void _internal_set_device_id(const std::string& value);
-  std::string* _internal_mutable_device_id();
-  public:
-
-  // @@protoc_insertion_point(class_scope:presence.RetrieveUserPresenceByDeviceRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr device_id_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_presence_2eproto;
-};
-// -------------------------------------------------------------------
-
-class RetrieveUserPresenceByDeviceResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:presence.RetrieveUserPresenceByDeviceResponse) */ {
- public:
-  inline RetrieveUserPresenceByDeviceResponse() : RetrieveUserPresenceByDeviceResponse(nullptr) {}
-  virtual ~RetrieveUserPresenceByDeviceResponse();
-
-  RetrieveUserPresenceByDeviceResponse(const RetrieveUserPresenceByDeviceResponse& from);
-  RetrieveUserPresenceByDeviceResponse(RetrieveUserPresenceByDeviceResponse&& from) noexcept
-    : RetrieveUserPresenceByDeviceResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline RetrieveUserPresenceByDeviceResponse& operator=(const RetrieveUserPresenceByDeviceResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline RetrieveUserPresenceByDeviceResponse& operator=(RetrieveUserPresenceByDeviceResponse&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const RetrieveUserPresenceByDeviceResponse& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const RetrieveUserPresenceByDeviceResponse* internal_default_instance() {
-    return reinterpret_cast<const RetrieveUserPresenceByDeviceResponse*>(
-               &_RetrieveUserPresenceByDeviceResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    4;
-
-  friend void swap(RetrieveUserPresenceByDeviceResponse& a, RetrieveUserPresenceByDeviceResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(RetrieveUserPresenceByDeviceResponse* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(RetrieveUserPresenceByDeviceResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline RetrieveUserPresenceByDeviceResponse* New() const final {
-    return CreateMaybeMessage<RetrieveUserPresenceByDeviceResponse>(nullptr);
-  }
-
-  RetrieveUserPresenceByDeviceResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<RetrieveUserPresenceByDeviceResponse>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const RetrieveUserPresenceByDeviceResponse& from);
-  void MergeFrom(const RetrieveUserPresenceByDeviceResponse& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(RetrieveUserPresenceByDeviceResponse* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "presence.RetrieveUserPresenceByDeviceResponse";
-  }
-  protected:
-  explicit RetrieveUserPresenceByDeviceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_presence_2eproto);
-    return ::descriptor_table_presence_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kModelFieldNumber = 1,
-  };
-  // .presence.PresenceModel model = 1;
-  bool has_model() const;
-  private:
-  bool _internal_has_model() const;
-  public:
-  void clear_model();
-  const ::presence::PresenceModel& model() const;
-  ::presence::PresenceModel* release_model();
-  ::presence::PresenceModel* mutable_model();
-  void set_allocated_model(::presence::PresenceModel* model);
-  private:
-  const ::presence::PresenceModel& _internal_model() const;
-  ::presence::PresenceModel* _internal_mutable_model();
-  public:
-  void unsafe_arena_set_allocated_model(
-      ::presence::PresenceModel* model);
-  ::presence::PresenceModel* unsafe_arena_release_model();
-
-  // @@protoc_insertion_point(class_scope:presence.RetrieveUserPresenceByDeviceResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::presence::PresenceModel* model_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_presence_2eproto;
-};
-// -------------------------------------------------------------------
-
 class RetrieveUserPresenceByIdRequest PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:presence.RetrieveUserPresenceByIdRequest) */ {
  public:
@@ -974,7 +658,7 @@ class RetrieveUserPresenceByIdRequest PROTOBUF_FINAL :
                &_RetrieveUserPresenceByIdRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    3;
 
   friend void swap(RetrieveUserPresenceByIdRequest& a, RetrieveUserPresenceByIdRequest& b) {
     a.Swap(&b);
@@ -1076,23 +760,23 @@ class RetrieveUserPresenceByIdRequest PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class RetrieveUserPresenceByIdResponce PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:presence.RetrieveUserPresenceByIdResponce) */ {
+class RetrieveUserPresenceByIdResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:presence.RetrieveUserPresenceByIdResponse) */ {
  public:
-  inline RetrieveUserPresenceByIdResponce() : RetrieveUserPresenceByIdResponce(nullptr) {}
-  virtual ~RetrieveUserPresenceByIdResponce();
+  inline RetrieveUserPresenceByIdResponse() : RetrieveUserPresenceByIdResponse(nullptr) {}
+  virtual ~RetrieveUserPresenceByIdResponse();
 
-  RetrieveUserPresenceByIdResponce(const RetrieveUserPresenceByIdResponce& from);
-  RetrieveUserPresenceByIdResponce(RetrieveUserPresenceByIdResponce&& from) noexcept
-    : RetrieveUserPresenceByIdResponce() {
+  RetrieveUserPresenceByIdResponse(const RetrieveUserPresenceByIdResponse& from);
+  RetrieveUserPresenceByIdResponse(RetrieveUserPresenceByIdResponse&& from) noexcept
+    : RetrieveUserPresenceByIdResponse() {
     *this = ::std::move(from);
   }
 
-  inline RetrieveUserPresenceByIdResponce& operator=(const RetrieveUserPresenceByIdResponce& from) {
+  inline RetrieveUserPresenceByIdResponse& operator=(const RetrieveUserPresenceByIdResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline RetrieveUserPresenceByIdResponce& operator=(RetrieveUserPresenceByIdResponce&& from) noexcept {
+  inline RetrieveUserPresenceByIdResponse& operator=(RetrieveUserPresenceByIdResponse&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1110,20 +794,20 @@ class RetrieveUserPresenceByIdResponce PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const RetrieveUserPresenceByIdResponce& default_instance();
+  static const RetrieveUserPresenceByIdResponse& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const RetrieveUserPresenceByIdResponce* internal_default_instance() {
-    return reinterpret_cast<const RetrieveUserPresenceByIdResponce*>(
-               &_RetrieveUserPresenceByIdResponce_default_instance_);
+  static inline const RetrieveUserPresenceByIdResponse* internal_default_instance() {
+    return reinterpret_cast<const RetrieveUserPresenceByIdResponse*>(
+               &_RetrieveUserPresenceByIdResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    4;
 
-  friend void swap(RetrieveUserPresenceByIdResponce& a, RetrieveUserPresenceByIdResponce& b) {
+  friend void swap(RetrieveUserPresenceByIdResponse& a, RetrieveUserPresenceByIdResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(RetrieveUserPresenceByIdResponce* other) {
+  inline void Swap(RetrieveUserPresenceByIdResponse* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -1131,7 +815,7 @@ class RetrieveUserPresenceByIdResponce PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(RetrieveUserPresenceByIdResponce* other) {
+  void UnsafeArenaSwap(RetrieveUserPresenceByIdResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -1139,17 +823,17 @@ class RetrieveUserPresenceByIdResponce PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline RetrieveUserPresenceByIdResponce* New() const final {
-    return CreateMaybeMessage<RetrieveUserPresenceByIdResponce>(nullptr);
+  inline RetrieveUserPresenceByIdResponse* New() const final {
+    return CreateMaybeMessage<RetrieveUserPresenceByIdResponse>(nullptr);
   }
 
-  RetrieveUserPresenceByIdResponce* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<RetrieveUserPresenceByIdResponce>(arena);
+  RetrieveUserPresenceByIdResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RetrieveUserPresenceByIdResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const RetrieveUserPresenceByIdResponce& from);
-  void MergeFrom(const RetrieveUserPresenceByIdResponce& from);
+  void CopyFrom(const RetrieveUserPresenceByIdResponse& from);
+  void MergeFrom(const RetrieveUserPresenceByIdResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1163,13 +847,13 @@ class RetrieveUserPresenceByIdResponce PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(RetrieveUserPresenceByIdResponce* other);
+  void InternalSwap(RetrieveUserPresenceByIdResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "presence.RetrieveUserPresenceByIdResponce";
+    return "presence.RetrieveUserPresenceByIdResponse";
   }
   protected:
-  explicit RetrieveUserPresenceByIdResponce(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit RetrieveUserPresenceByIdResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1189,63 +873,34 @@ class RetrieveUserPresenceByIdResponce PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kModelsFieldNumber = 3,
-    kUserIdFieldNumber = 1,
-    kAggregatedStatusFieldNumber = 2,
+    kModelFieldNumber = 1,
   };
-  // repeated .presence.PresenceModel models = 3;
-  int models_size() const;
+  // .presence.PresenceModel model = 1;
+  bool has_model() const;
   private:
-  int _internal_models_size() const;
+  bool _internal_has_model() const;
   public:
-  void clear_models();
-  ::presence::PresenceModel* mutable_models(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::presence::PresenceModel >*
-      mutable_models();
+  void clear_model();
+  const ::presence::PresenceModel& model() const;
+  ::presence::PresenceModel* release_model();
+  ::presence::PresenceModel* mutable_model();
+  void set_allocated_model(::presence::PresenceModel* model);
   private:
-  const ::presence::PresenceModel& _internal_models(int index) const;
-  ::presence::PresenceModel* _internal_add_models();
+  const ::presence::PresenceModel& _internal_model() const;
+  ::presence::PresenceModel* _internal_mutable_model();
   public:
-  const ::presence::PresenceModel& models(int index) const;
-  ::presence::PresenceModel* add_models();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::presence::PresenceModel >&
-      models() const;
+  void unsafe_arena_set_allocated_model(
+      ::presence::PresenceModel* model);
+  ::presence::PresenceModel* unsafe_arena_release_model();
 
-  // string user_id = 1;
-  void clear_user_id();
-  const std::string& user_id() const;
-  void set_user_id(const std::string& value);
-  void set_user_id(std::string&& value);
-  void set_user_id(const char* value);
-  void set_user_id(const char* value, size_t size);
-  std::string* mutable_user_id();
-  std::string* release_user_id();
-  void set_allocated_user_id(std::string* user_id);
-  private:
-  const std::string& _internal_user_id() const;
-  void _internal_set_user_id(const std::string& value);
-  std::string* _internal_mutable_user_id();
-  public:
-
-  // .presence.ConnectionStatus aggregated_status = 2;
-  void clear_aggregated_status();
-  ::presence::ConnectionStatus aggregated_status() const;
-  void set_aggregated_status(::presence::ConnectionStatus value);
-  private:
-  ::presence::ConnectionStatus _internal_aggregated_status() const;
-  void _internal_set_aggregated_status(::presence::ConnectionStatus value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:presence.RetrieveUserPresenceByIdResponce)
+  // @@protoc_insertion_point(class_scope:presence.RetrieveUserPresenceByIdResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::presence::PresenceModel > models_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
-  int aggregated_status_;
+  ::presence::PresenceModel* model_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_presence_2eproto;
 };
@@ -1618,221 +1273,6 @@ inline void UpdateUserConnectionReply::set_status(::presence::ConnectionStatus v
 
 // -------------------------------------------------------------------
 
-// RetrieveUserPresenceByDeviceRequest
-
-// string user_id = 1;
-inline void RetrieveUserPresenceByDeviceRequest::clear_user_id() {
-  user_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline const std::string& RetrieveUserPresenceByDeviceRequest::user_id() const {
-  // @@protoc_insertion_point(field_get:presence.RetrieveUserPresenceByDeviceRequest.user_id)
-  return _internal_user_id();
-}
-inline void RetrieveUserPresenceByDeviceRequest::set_user_id(const std::string& value) {
-  _internal_set_user_id(value);
-  // @@protoc_insertion_point(field_set:presence.RetrieveUserPresenceByDeviceRequest.user_id)
-}
-inline std::string* RetrieveUserPresenceByDeviceRequest::mutable_user_id() {
-  // @@protoc_insertion_point(field_mutable:presence.RetrieveUserPresenceByDeviceRequest.user_id)
-  return _internal_mutable_user_id();
-}
-inline const std::string& RetrieveUserPresenceByDeviceRequest::_internal_user_id() const {
-  return user_id_.Get();
-}
-inline void RetrieveUserPresenceByDeviceRequest::_internal_set_user_id(const std::string& value) {
-  
-  user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
-}
-inline void RetrieveUserPresenceByDeviceRequest::set_user_id(std::string&& value) {
-  
-  user_id_.Set(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:presence.RetrieveUserPresenceByDeviceRequest.user_id)
-}
-inline void RetrieveUserPresenceByDeviceRequest::set_user_id(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
-              GetArena());
-  // @@protoc_insertion_point(field_set_char:presence.RetrieveUserPresenceByDeviceRequest.user_id)
-}
-inline void RetrieveUserPresenceByDeviceRequest::set_user_id(const char* value,
-    size_t size) {
-  
-  user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:presence.RetrieveUserPresenceByDeviceRequest.user_id)
-}
-inline std::string* RetrieveUserPresenceByDeviceRequest::_internal_mutable_user_id() {
-  
-  return user_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline std::string* RetrieveUserPresenceByDeviceRequest::release_user_id() {
-  // @@protoc_insertion_point(field_release:presence.RetrieveUserPresenceByDeviceRequest.user_id)
-  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void RetrieveUserPresenceByDeviceRequest::set_allocated_user_id(std::string* user_id) {
-  if (user_id != nullptr) {
-    
-  } else {
-    
-  }
-  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:presence.RetrieveUserPresenceByDeviceRequest.user_id)
-}
-
-// string device_id = 2;
-inline void RetrieveUserPresenceByDeviceRequest::clear_device_id() {
-  device_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline const std::string& RetrieveUserPresenceByDeviceRequest::device_id() const {
-  // @@protoc_insertion_point(field_get:presence.RetrieveUserPresenceByDeviceRequest.device_id)
-  return _internal_device_id();
-}
-inline void RetrieveUserPresenceByDeviceRequest::set_device_id(const std::string& value) {
-  _internal_set_device_id(value);
-  // @@protoc_insertion_point(field_set:presence.RetrieveUserPresenceByDeviceRequest.device_id)
-}
-inline std::string* RetrieveUserPresenceByDeviceRequest::mutable_device_id() {
-  // @@protoc_insertion_point(field_mutable:presence.RetrieveUserPresenceByDeviceRequest.device_id)
-  return _internal_mutable_device_id();
-}
-inline const std::string& RetrieveUserPresenceByDeviceRequest::_internal_device_id() const {
-  return device_id_.Get();
-}
-inline void RetrieveUserPresenceByDeviceRequest::_internal_set_device_id(const std::string& value) {
-  
-  device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
-}
-inline void RetrieveUserPresenceByDeviceRequest::set_device_id(std::string&& value) {
-  
-  device_id_.Set(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:presence.RetrieveUserPresenceByDeviceRequest.device_id)
-}
-inline void RetrieveUserPresenceByDeviceRequest::set_device_id(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
-              GetArena());
-  // @@protoc_insertion_point(field_set_char:presence.RetrieveUserPresenceByDeviceRequest.device_id)
-}
-inline void RetrieveUserPresenceByDeviceRequest::set_device_id(const char* value,
-    size_t size) {
-  
-  device_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:presence.RetrieveUserPresenceByDeviceRequest.device_id)
-}
-inline std::string* RetrieveUserPresenceByDeviceRequest::_internal_mutable_device_id() {
-  
-  return device_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline std::string* RetrieveUserPresenceByDeviceRequest::release_device_id() {
-  // @@protoc_insertion_point(field_release:presence.RetrieveUserPresenceByDeviceRequest.device_id)
-  return device_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void RetrieveUserPresenceByDeviceRequest::set_allocated_device_id(std::string* device_id) {
-  if (device_id != nullptr) {
-    
-  } else {
-    
-  }
-  device_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), device_id,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:presence.RetrieveUserPresenceByDeviceRequest.device_id)
-}
-
-// -------------------------------------------------------------------
-
-// RetrieveUserPresenceByDeviceResponse
-
-// .presence.PresenceModel model = 1;
-inline bool RetrieveUserPresenceByDeviceResponse::_internal_has_model() const {
-  return this != internal_default_instance() && model_ != nullptr;
-}
-inline bool RetrieveUserPresenceByDeviceResponse::has_model() const {
-  return _internal_has_model();
-}
-inline void RetrieveUserPresenceByDeviceResponse::clear_model() {
-  if (GetArena() == nullptr && model_ != nullptr) {
-    delete model_;
-  }
-  model_ = nullptr;
-}
-inline const ::presence::PresenceModel& RetrieveUserPresenceByDeviceResponse::_internal_model() const {
-  const ::presence::PresenceModel* p = model_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::presence::PresenceModel*>(
-      &::presence::_PresenceModel_default_instance_);
-}
-inline const ::presence::PresenceModel& RetrieveUserPresenceByDeviceResponse::model() const {
-  // @@protoc_insertion_point(field_get:presence.RetrieveUserPresenceByDeviceResponse.model)
-  return _internal_model();
-}
-inline void RetrieveUserPresenceByDeviceResponse::unsafe_arena_set_allocated_model(
-    ::presence::PresenceModel* model) {
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(model_);
-  }
-  model_ = model;
-  if (model) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:presence.RetrieveUserPresenceByDeviceResponse.model)
-}
-inline ::presence::PresenceModel* RetrieveUserPresenceByDeviceResponse::release_model() {
-  
-  ::presence::PresenceModel* temp = model_;
-  model_ = nullptr;
-  if (GetArena() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-  return temp;
-}
-inline ::presence::PresenceModel* RetrieveUserPresenceByDeviceResponse::unsafe_arena_release_model() {
-  // @@protoc_insertion_point(field_release:presence.RetrieveUserPresenceByDeviceResponse.model)
-  
-  ::presence::PresenceModel* temp = model_;
-  model_ = nullptr;
-  return temp;
-}
-inline ::presence::PresenceModel* RetrieveUserPresenceByDeviceResponse::_internal_mutable_model() {
-  
-  if (model_ == nullptr) {
-    auto* p = CreateMaybeMessage<::presence::PresenceModel>(GetArena());
-    model_ = p;
-  }
-  return model_;
-}
-inline ::presence::PresenceModel* RetrieveUserPresenceByDeviceResponse::mutable_model() {
-  // @@protoc_insertion_point(field_mutable:presence.RetrieveUserPresenceByDeviceResponse.model)
-  return _internal_mutable_model();
-}
-inline void RetrieveUserPresenceByDeviceResponse::set_allocated_model(::presence::PresenceModel* model) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  if (message_arena == nullptr) {
-    delete model_;
-  }
-  if (model) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(model);
-    if (message_arena != submessage_arena) {
-      model = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, model, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  model_ = model;
-  // @@protoc_insertion_point(field_set_allocated:presence.RetrieveUserPresenceByDeviceResponse.model)
-}
-
-// -------------------------------------------------------------------
-
 // RetrieveUserPresenceByIdRequest
 
 // string user_id = 1;
@@ -1899,136 +1339,94 @@ inline void RetrieveUserPresenceByIdRequest::set_allocated_user_id(std::string* 
 
 // -------------------------------------------------------------------
 
-// RetrieveUserPresenceByIdResponce
+// RetrieveUserPresenceByIdResponse
 
-// string user_id = 1;
-inline void RetrieveUserPresenceByIdResponce::clear_user_id() {
-  user_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+// .presence.PresenceModel model = 1;
+inline bool RetrieveUserPresenceByIdResponse::_internal_has_model() const {
+  return this != internal_default_instance() && model_ != nullptr;
 }
-inline const std::string& RetrieveUserPresenceByIdResponce::user_id() const {
-  // @@protoc_insertion_point(field_get:presence.RetrieveUserPresenceByIdResponce.user_id)
-  return _internal_user_id();
+inline bool RetrieveUserPresenceByIdResponse::has_model() const {
+  return _internal_has_model();
 }
-inline void RetrieveUserPresenceByIdResponce::set_user_id(const std::string& value) {
-  _internal_set_user_id(value);
-  // @@protoc_insertion_point(field_set:presence.RetrieveUserPresenceByIdResponce.user_id)
+inline void RetrieveUserPresenceByIdResponse::clear_model() {
+  if (GetArena() == nullptr && model_ != nullptr) {
+    delete model_;
+  }
+  model_ = nullptr;
 }
-inline std::string* RetrieveUserPresenceByIdResponce::mutable_user_id() {
-  // @@protoc_insertion_point(field_mutable:presence.RetrieveUserPresenceByIdResponce.user_id)
-  return _internal_mutable_user_id();
+inline const ::presence::PresenceModel& RetrieveUserPresenceByIdResponse::_internal_model() const {
+  const ::presence::PresenceModel* p = model_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::presence::PresenceModel*>(
+      &::presence::_PresenceModel_default_instance_);
 }
-inline const std::string& RetrieveUserPresenceByIdResponce::_internal_user_id() const {
-  return user_id_.Get();
+inline const ::presence::PresenceModel& RetrieveUserPresenceByIdResponse::model() const {
+  // @@protoc_insertion_point(field_get:presence.RetrieveUserPresenceByIdResponse.model)
+  return _internal_model();
 }
-inline void RetrieveUserPresenceByIdResponce::_internal_set_user_id(const std::string& value) {
-  
-  user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
-}
-inline void RetrieveUserPresenceByIdResponce::set_user_id(std::string&& value) {
-  
-  user_id_.Set(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:presence.RetrieveUserPresenceByIdResponce.user_id)
-}
-inline void RetrieveUserPresenceByIdResponce::set_user_id(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
-              GetArena());
-  // @@protoc_insertion_point(field_set_char:presence.RetrieveUserPresenceByIdResponce.user_id)
-}
-inline void RetrieveUserPresenceByIdResponce::set_user_id(const char* value,
-    size_t size) {
-  
-  user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:presence.RetrieveUserPresenceByIdResponce.user_id)
-}
-inline std::string* RetrieveUserPresenceByIdResponce::_internal_mutable_user_id() {
-  
-  return user_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline std::string* RetrieveUserPresenceByIdResponce::release_user_id() {
-  // @@protoc_insertion_point(field_release:presence.RetrieveUserPresenceByIdResponce.user_id)
-  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void RetrieveUserPresenceByIdResponce::set_allocated_user_id(std::string* user_id) {
-  if (user_id != nullptr) {
+inline void RetrieveUserPresenceByIdResponse::unsafe_arena_set_allocated_model(
+    ::presence::PresenceModel* model) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(model_);
+  }
+  model_ = model;
+  if (model) {
     
   } else {
     
   }
-  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:presence.RetrieveUserPresenceByIdResponce.user_id)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:presence.RetrieveUserPresenceByIdResponse.model)
 }
-
-// .presence.ConnectionStatus aggregated_status = 2;
-inline void RetrieveUserPresenceByIdResponce::clear_aggregated_status() {
-  aggregated_status_ = 0;
-}
-inline ::presence::ConnectionStatus RetrieveUserPresenceByIdResponce::_internal_aggregated_status() const {
-  return static_cast< ::presence::ConnectionStatus >(aggregated_status_);
-}
-inline ::presence::ConnectionStatus RetrieveUserPresenceByIdResponce::aggregated_status() const {
-  // @@protoc_insertion_point(field_get:presence.RetrieveUserPresenceByIdResponce.aggregated_status)
-  return _internal_aggregated_status();
-}
-inline void RetrieveUserPresenceByIdResponce::_internal_set_aggregated_status(::presence::ConnectionStatus value) {
+inline ::presence::PresenceModel* RetrieveUserPresenceByIdResponse::release_model() {
   
-  aggregated_status_ = value;
+  ::presence::PresenceModel* temp = model_;
+  model_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
 }
-inline void RetrieveUserPresenceByIdResponce::set_aggregated_status(::presence::ConnectionStatus value) {
-  _internal_set_aggregated_status(value);
-  // @@protoc_insertion_point(field_set:presence.RetrieveUserPresenceByIdResponce.aggregated_status)
+inline ::presence::PresenceModel* RetrieveUserPresenceByIdResponse::unsafe_arena_release_model() {
+  // @@protoc_insertion_point(field_release:presence.RetrieveUserPresenceByIdResponse.model)
+  
+  ::presence::PresenceModel* temp = model_;
+  model_ = nullptr;
+  return temp;
 }
-
-// repeated .presence.PresenceModel models = 3;
-inline int RetrieveUserPresenceByIdResponce::_internal_models_size() const {
-  return models_.size();
+inline ::presence::PresenceModel* RetrieveUserPresenceByIdResponse::_internal_mutable_model() {
+  
+  if (model_ == nullptr) {
+    auto* p = CreateMaybeMessage<::presence::PresenceModel>(GetArena());
+    model_ = p;
+  }
+  return model_;
 }
-inline int RetrieveUserPresenceByIdResponce::models_size() const {
-  return _internal_models_size();
+inline ::presence::PresenceModel* RetrieveUserPresenceByIdResponse::mutable_model() {
+  // @@protoc_insertion_point(field_mutable:presence.RetrieveUserPresenceByIdResponse.model)
+  return _internal_mutable_model();
 }
-inline void RetrieveUserPresenceByIdResponce::clear_models() {
-  models_.Clear();
-}
-inline ::presence::PresenceModel* RetrieveUserPresenceByIdResponce::mutable_models(int index) {
-  // @@protoc_insertion_point(field_mutable:presence.RetrieveUserPresenceByIdResponce.models)
-  return models_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::presence::PresenceModel >*
-RetrieveUserPresenceByIdResponce::mutable_models() {
-  // @@protoc_insertion_point(field_mutable_list:presence.RetrieveUserPresenceByIdResponce.models)
-  return &models_;
-}
-inline const ::presence::PresenceModel& RetrieveUserPresenceByIdResponce::_internal_models(int index) const {
-  return models_.Get(index);
-}
-inline const ::presence::PresenceModel& RetrieveUserPresenceByIdResponce::models(int index) const {
-  // @@protoc_insertion_point(field_get:presence.RetrieveUserPresenceByIdResponce.models)
-  return _internal_models(index);
-}
-inline ::presence::PresenceModel* RetrieveUserPresenceByIdResponce::_internal_add_models() {
-  return models_.Add();
-}
-inline ::presence::PresenceModel* RetrieveUserPresenceByIdResponce::add_models() {
-  // @@protoc_insertion_point(field_add:presence.RetrieveUserPresenceByIdResponce.models)
-  return _internal_add_models();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::presence::PresenceModel >&
-RetrieveUserPresenceByIdResponce::models() const {
-  // @@protoc_insertion_point(field_list:presence.RetrieveUserPresenceByIdResponce.models)
-  return models_;
+inline void RetrieveUserPresenceByIdResponse::set_allocated_model(::presence::PresenceModel* model) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete model_;
+  }
+  if (model) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(model);
+    if (message_arena != submessage_arena) {
+      model = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, model, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  model_ = model;
+  // @@protoc_insertion_point(field_set_allocated:presence.RetrieveUserPresenceByIdResponse.model)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

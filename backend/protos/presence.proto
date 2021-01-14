@@ -29,23 +29,12 @@ message UpdateUserConnectionReply{
   ConnectionStatus status = 1;
 }
 
-message RetrieveUserPresenceByDeviceRequest{
-  string user_id = 1;
-  string device_id = 2;
-}
-
-message RetrieveUserPresenceByDeviceResponse{
-  PresenceModel model = 1;
-}
-
 message RetrieveUserPresenceByIdRequest{
   string user_id = 1;
 }
 
-message RetrieveUserPresenceByIdResponce{
-  string user_id = 1;
-  ConnectionStatus aggregated_status = 2;
-  repeated PresenceModel models = 3;
+message RetrieveUserPresenceByIdResponse{
+  PresenceModel model = 1;
 }
 
 service PresenceRecorder {
@@ -53,6 +42,5 @@ service PresenceRecorder {
 }
 
 service PresenceRetriever{
-  rpc RetrieveUserPresenceByDevice(RetrieveUserPresenceByDeviceRequest) returns (RetrieveUserPresenceByDeviceResponse){}
-  rpc RetrieveUserPresenceById(RetrieveUserPresenceByIdRequest) returns(RetrieveUserPresenceByIdResponce){}
+  rpc RetrieveUserPresenceByUserId(RetrieveUserPresenceByIdRequest) returns (RetrieveUserPresenceByIdResponse){}
 }

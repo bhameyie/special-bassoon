@@ -19,12 +19,9 @@ class MockPresenceRecorderStub : public PresenceRecorder::StubInterface {
 
 class MockPresenceRetrieverStub : public PresenceRetriever::StubInterface {
  public:
-  MOCK_METHOD3(RetrieveUserPresenceByDevice, ::grpc::Status(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::presence::RetrieveUserPresenceByDeviceResponse* response));
-  MOCK_METHOD3(AsyncRetrieveUserPresenceByDeviceRaw, ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByDeviceResponse>*(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::grpc::CompletionQueue* cq));
-  MOCK_METHOD3(PrepareAsyncRetrieveUserPresenceByDeviceRaw, ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByDeviceResponse>*(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByDeviceRequest& request, ::grpc::CompletionQueue* cq));
-  MOCK_METHOD3(RetrieveUserPresenceById, ::grpc::Status(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::presence::RetrieveUserPresenceByIdResponce* response));
-  MOCK_METHOD3(AsyncRetrieveUserPresenceByIdRaw, ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByIdResponce>*(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq));
-  MOCK_METHOD3(PrepareAsyncRetrieveUserPresenceByIdRaw, ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByIdResponce>*(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq));
+  MOCK_METHOD3(RetrieveUserPresenceByUserId, ::grpc::Status(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::presence::RetrieveUserPresenceByIdResponse* response));
+  MOCK_METHOD3(AsyncRetrieveUserPresenceByUserIdRaw, ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByIdResponse>*(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq));
+  MOCK_METHOD3(PrepareAsyncRetrieveUserPresenceByUserIdRaw, ::grpc::ClientAsyncResponseReaderInterface< ::presence::RetrieveUserPresenceByIdResponse>*(::grpc::ClientContext* context, const ::presence::RetrieveUserPresenceByIdRequest& request, ::grpc::CompletionQueue* cq));
 };
 
 } // namespace presence

@@ -26,11 +26,6 @@ using ::testing::Mock;
 using namespace presence;
 using namespace grpc;
 
-/* TODO
- * test typical scenario of all is well
- * test scenario where an exception occurs
- */
-
 struct SomeException : public exception {
 
 };
@@ -89,7 +84,6 @@ TEST_F(PresenceRecorderServiceShould, ReturnOperationFailureWhenUserIdIsNull) {
 }
 
 TEST_F(PresenceRecorderServiceShould, ReturnOperationFailureWhenDeviceIdIsNull) {
-
 
   UpdateUserConnectionRequest req;
   req.set_user_id("uid");

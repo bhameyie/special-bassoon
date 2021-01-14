@@ -11,6 +11,11 @@ grpc::StatusCode FailureCodeToStatusCode(OperationFailureCode code) {
   if (code == OperationFailureCode::FATAL_ERROR) {
     return grpc::StatusCode::INTERNAL;
   }
+
+  if(code == OperationFailureCode::ITEM_NOT_FOUND){
+    return grpc::StatusCode::NOT_FOUND;
+  }
+
   return grpc::StatusCode::OK;
 }
 

@@ -1,12 +1,9 @@
-
-#include <iostream>
+#include <variant>
 #include <memory>
-#include <string>
-
 #include "presence.pb.h"
 #include "presence.grpc.pb.h"
-#include "presence_cache.h"
 #include "presence_retriever_service.h"
+#include "utils.h"
 
 using grpc::Server;
 using grpc::ServerBuilder;
@@ -16,25 +13,35 @@ using grpc::Status;
 using namespace presence;
 using namespace std;
 
-class PresenceRetrieverImpl final : public PresenceRetriever::Service
-{
+class PresenceRetrieverImpl final : public PresenceRetriever::Service {
 
-public:
-    explicit PresenceRetrieverImpl(std::unique_ptr<PresenceRetrieverService> service)
-    {
-        service_ = std::move(service);
-    }
+ public:
+  explicit PresenceRetrieverImpl(std::unique_ptr<PresenceRetrieverService> service) {
+    service_ = std::move(service);
+  }
 
-    grpc::Status RetrieveUserPresenceByDevice(::grpc::ServerContext *context, const ::presence::RetrieveUserPresenceByDeviceRequest *request, ::presence::RetrieveUserPresenceByDeviceResponse *response) override
-    {
+  ::grpc::Status RetrieveUserPresenceByUserId(::grpc::ServerContext *context,
+                                              const ::presence::RetrieveUserPresenceByIdRequest *request,
+                                              ::presence::RetrieveUserPresenceByIdResponse *response) override {
+
+    auto result = service_->GetPresenceById(request->user_id());
+
+    return std::visit([&response](std::variant<PresenceModel,
+                                               OperationFailure> &&x) {
+
+      if (auto retrieved = std::get_if<PresenceModel>(&x)) {
+
+        response->set_allocated_model(retrieved);
         return Status::OK;
-    }
+      } else {
+        auto failure = std::get<OperationFailure>(x);
+        return Status(FailureCodeToStatusCode(failure.FailureCode()), failure.ErrorMessage());
 
-    grpc::Status RetrieveUserPresenceById(::grpc::ServerContext *context, const ::presence::RetrieveUserPresenceByIdRequest *request, ::presence::RetrieveUserPresenceByIdResponce *response) override
-    {
-        return Status::OK;
-    }
+      }
 
-private:
-    std::unique_ptr<PresenceRetrieverService> service_;
+    }, result);
+  }
+
+ private:
+  std::unique_ptr<PresenceRetrieverService> service_;
 };
