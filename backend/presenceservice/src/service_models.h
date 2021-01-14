@@ -20,7 +20,7 @@ class OperationFailure{
     failure_code_=failure_code;
   }
 
-  [[nodiscard]] std::string ErroMessage() const{
+  [[nodiscard]] std::string ErrorMessage() const{
     return error_message_;
   }
 

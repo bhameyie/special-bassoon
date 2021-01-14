@@ -72,17 +72,56 @@ TEST_F(PresenceRecorderServiceShould, ReturnUpdatedPresenceWhenNoErrorOccurs) {
 }
 
 TEST_F(PresenceRecorderServiceShould, ReturnOperationFailureWhenUserIdIsNull) {
-  EXPECT_TRUE(false);
+
+  UpdateUserConnectionRequest req;
+  req.set_device_id("dev");
+  req.set_status(ConnectionStatus::AWAY);
+  req.set_last_seen_timestamp(23L);
+
+  PresenceRecorderService sut(cache_);
+  auto result = sut.UpdateStatus(req);
+
+  EXPECT_TRUE(std::holds_alternative<OperationFailure>(result));
+
+  auto validationFailure = std::get<OperationFailure>(result);
+  EXPECT_EQ(validationFailure.ErrorMessage(), "Invalid request: 'user_id' cannot be null");
+  EXPECT_EQ(validationFailure.FailureCode(), OperationFailureCode::FAILED_VALIDATION);
 }
 
 TEST_F(PresenceRecorderServiceShould, ReturnOperationFailureWhenDeviceIdIsNull) {
 
-  EXPECT_TRUE(false);
+
+  UpdateUserConnectionRequest req;
+  req.set_user_id("uid");
+  req.set_status(ConnectionStatus::AWAY);
+  req.set_last_seen_timestamp(23L);
+
+  PresenceRecorderService sut(cache_);
+  auto result = sut.UpdateStatus(req);
+
+  EXPECT_TRUE(std::holds_alternative<OperationFailure>(result));
+
+  auto validationFailure = std::get<OperationFailure>(result);
+  EXPECT_EQ(validationFailure.ErrorMessage(), "Invalid request: 'device_id' cannot be null");
+  EXPECT_EQ(validationFailure.FailureCode(), OperationFailureCode::FAILED_VALIDATION);
 }
 
 TEST_F(PresenceRecorderServiceShould, ReturnOperationFailureWhenTimeStampIsLessThan1) {
 
-  EXPECT_TRUE(false);
+  UpdateUserConnectionRequest req;
+  req.set_device_id("dev");
+  req.set_user_id("u1");
+  req.set_status(ConnectionStatus::AWAY);
+  req.set_last_seen_timestamp(0L);
+
+  PresenceRecorderService sut(cache_);
+  auto result = sut.UpdateStatus(req);
+
+  EXPECT_TRUE(std::holds_alternative<OperationFailure>(result));
+
+  auto validationFailure = std::get<OperationFailure>(result);
+  EXPECT_EQ(validationFailure.ErrorMessage(), "Invalid request: 'last_seen_timestamp' is not in the proper range");
+  EXPECT_EQ(validationFailure.FailureCode(), OperationFailureCode::FAILED_VALIDATION);
 }
 
 TEST_F(PresenceRecorderServiceShould, ReturnOperationFailureWhenAnExceptionIsThrown) {
