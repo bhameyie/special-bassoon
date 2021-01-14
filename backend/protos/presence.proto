@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package presence;
+import "google/protobuf/timestamp.proto";
 
 enum ConnectionStatus{
   UNDETERMINED = 0;
@@ -18,14 +19,14 @@ message PresenceModel{
 
 message UpdateUserConnectionRequest{
   string device_id = 1;
+  //user_id should normally come from the authcontext
   string user_id = 2;
   ConnectionStatus status = 3;
   int64 last_seen_timestamp = 4;
 }
 
 message UpdateUserConnectionReply{
-  string user_id = 1;
-  ConnectionStatus status = 2;
+  ConnectionStatus status = 1;
 }
 
 message RetrieveUserPresenceByDeviceRequest{

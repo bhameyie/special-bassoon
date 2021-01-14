@@ -1,12 +1,11 @@
 
-#include <iostream>
 #include <memory>
-#include <string>
-
+#include <variant>
 #include "presence.pb.h"
 #include "presence.grpc.pb.h"
 #include "presence_cache.h"
 #include "presence_recorder_service.h"
+#include "utils.h"
 
 using grpc::Server;
 using grpc::ServerBuilder;
@@ -27,7 +26,23 @@ class PresenceRecorderImpl final : public PresenceRecorder::Service {
                             const ::presence::UpdateUserConnectionRequest *request,
                             ::presence::UpdateUserConnectionReply *response) override {
 
-    return Status::OK;
+    auto result = service_->UpdateStatus(*request);
+
+    return std::visit([&response](std::variant<UpdatedPresence,
+                                               OperationFailure> &&x) {
+
+      if (auto updated = std::get_if<UpdatedPresence>(&x)) {
+
+        response->set_status(static_cast<ConnectionStatus>(updated->status_id));
+        return Status::OK;
+      } else {
+
+        auto failure = std::get<OperationFailure>(x);
+        response->set_status(ConnectionStatus::UNDETERMINED);
+        return Status(FailureCodeToStatusCode(failure.FailureCode()), failure.ErrorMessage());
+      }
+    }, result);
+
   }
 
  private:

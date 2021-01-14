@@ -45,7 +45,7 @@ std::variant<UpdatedPresence,
     return presence_cache_->UpdatePresence(convertedRequest);
   }
   catch (const std::exception &ex) {
-    //todo: log here
+    //todo: log it
     return OperationFailure("Unexpected error while updating the cache",
                             OperationFailureCode::FATAL_ERROR);
   }

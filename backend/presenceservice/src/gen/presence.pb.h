@@ -33,6 +33,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include <google/protobuf/timestamp.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_presence_2eproto
@@ -599,26 +600,9 @@ class UpdateUserConnectionReply PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUserIdFieldNumber = 1,
-    kStatusFieldNumber = 2,
+    kStatusFieldNumber = 1,
   };
-  // string user_id = 1;
-  void clear_user_id();
-  const std::string& user_id() const;
-  void set_user_id(const std::string& value);
-  void set_user_id(std::string&& value);
-  void set_user_id(const char* value);
-  void set_user_id(const char* value, size_t size);
-  std::string* mutable_user_id();
-  std::string* release_user_id();
-  void set_allocated_user_id(std::string* user_id);
-  private:
-  const std::string& _internal_user_id() const;
-  void _internal_set_user_id(const std::string& value);
-  std::string* _internal_mutable_user_id();
-  public:
-
-  // .presence.ConnectionStatus status = 2;
+  // .presence.ConnectionStatus status = 1;
   void clear_status();
   ::presence::ConnectionStatus status() const;
   void set_status(::presence::ConnectionStatus value);
@@ -634,7 +618,6 @@ class UpdateUserConnectionReply PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_id_;
   int status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_presence_2eproto;
@@ -1613,69 +1596,7 @@ inline void UpdateUserConnectionRequest::set_last_seen_timestamp(::PROTOBUF_NAME
 
 // UpdateUserConnectionReply
 
-// string user_id = 1;
-inline void UpdateUserConnectionReply::clear_user_id() {
-  user_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline const std::string& UpdateUserConnectionReply::user_id() const {
-  // @@protoc_insertion_point(field_get:presence.UpdateUserConnectionReply.user_id)
-  return _internal_user_id();
-}
-inline void UpdateUserConnectionReply::set_user_id(const std::string& value) {
-  _internal_set_user_id(value);
-  // @@protoc_insertion_point(field_set:presence.UpdateUserConnectionReply.user_id)
-}
-inline std::string* UpdateUserConnectionReply::mutable_user_id() {
-  // @@protoc_insertion_point(field_mutable:presence.UpdateUserConnectionReply.user_id)
-  return _internal_mutable_user_id();
-}
-inline const std::string& UpdateUserConnectionReply::_internal_user_id() const {
-  return user_id_.Get();
-}
-inline void UpdateUserConnectionReply::_internal_set_user_id(const std::string& value) {
-  
-  user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
-}
-inline void UpdateUserConnectionReply::set_user_id(std::string&& value) {
-  
-  user_id_.Set(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:presence.UpdateUserConnectionReply.user_id)
-}
-inline void UpdateUserConnectionReply::set_user_id(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
-              GetArena());
-  // @@protoc_insertion_point(field_set_char:presence.UpdateUserConnectionReply.user_id)
-}
-inline void UpdateUserConnectionReply::set_user_id(const char* value,
-    size_t size) {
-  
-  user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:presence.UpdateUserConnectionReply.user_id)
-}
-inline std::string* UpdateUserConnectionReply::_internal_mutable_user_id() {
-  
-  return user_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline std::string* UpdateUserConnectionReply::release_user_id() {
-  // @@protoc_insertion_point(field_release:presence.UpdateUserConnectionReply.user_id)
-  return user_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void UpdateUserConnectionReply::set_allocated_user_id(std::string* user_id) {
-  if (user_id != nullptr) {
-    
-  } else {
-    
-  }
-  user_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_id,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:presence.UpdateUserConnectionReply.user_id)
-}
-
-// .presence.ConnectionStatus status = 2;
+// .presence.ConnectionStatus status = 1;
 inline void UpdateUserConnectionReply::clear_status() {
   status_ = 0;
 }

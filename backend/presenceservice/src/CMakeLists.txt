@@ -24,7 +24,6 @@ add_custom_command(
         "${hw_proto}"
         DEPENDS "${hw_proto}")
 
-
 include_directories("gen")
 
 add_library(presenceservicelib

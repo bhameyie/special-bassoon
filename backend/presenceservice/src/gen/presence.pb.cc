@@ -173,7 +173,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_presence_2eproto::offsets[] PR
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::presence::UpdateUserConnectionReply, user_id_),
   PROTOBUF_FIELD_OFFSET(::presence::UpdateUserConnectionReply, status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::presence::RetrieveUserPresenceByDeviceRequest, _internal_metadata_),
@@ -207,10 +206,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::presence::PresenceModel)},
   { 9, -1, sizeof(::presence::UpdateUserConnectionRequest)},
   { 18, -1, sizeof(::presence::UpdateUserConnectionReply)},
-  { 25, -1, sizeof(::presence::RetrieveUserPresenceByDeviceRequest)},
-  { 32, -1, sizeof(::presence::RetrieveUserPresenceByDeviceResponse)},
-  { 38, -1, sizeof(::presence::RetrieveUserPresenceByIdRequest)},
-  { 44, -1, sizeof(::presence::RetrieveUserPresenceByIdResponce)},
+  { 24, -1, sizeof(::presence::RetrieveUserPresenceByDeviceRequest)},
+  { 31, -1, sizeof(::presence::RetrieveUserPresenceByDeviceResponse)},
+  { 37, -1, sizeof(::presence::RetrieveUserPresenceByIdRequest)},
+  { 43, -1, sizeof(::presence::RetrieveUserPresenceByIdResponce)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -224,39 +223,40 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_presence_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016presence.proto\022\010presence\"|\n\rPresenceMo"
-  "del\022\017\n\007user_id\030\001 \001(\t\022\021\n\tdevice_id\030\002 \001(\t\022"
-  "*\n\006status\030\003 \001(\0162\032.presence.ConnectionSta"
-  "tus\022\033\n\023last_seen_timestamp\030\004 \001(\003\"\212\001\n\033Upd"
-  "ateUserConnectionRequest\022\021\n\tdevice_id\030\001 "
-  "\001(\t\022\017\n\007user_id\030\002 \001(\t\022*\n\006status\030\003 \001(\0162\032.p"
-  "resence.ConnectionStatus\022\033\n\023last_seen_ti"
-  "mestamp\030\004 \001(\003\"X\n\031UpdateUserConnectionRep"
-  "ly\022\017\n\007user_id\030\001 \001(\t\022*\n\006status\030\002 \001(\0162\032.pr"
-  "esence.ConnectionStatus\"I\n#RetrieveUserP"
-  "resenceByDeviceRequest\022\017\n\007user_id\030\001 \001(\t\022"
-  "\021\n\tdevice_id\030\002 \001(\t\"N\n$RetrieveUserPresen"
-  "ceByDeviceResponse\022&\n\005model\030\001 \001(\0132\027.pres"
-  "ence.PresenceModel\"2\n\037RetrieveUserPresen"
-  "ceByIdRequest\022\017\n\007user_id\030\001 \001(\t\"\223\001\n Retri"
-  "eveUserPresenceByIdResponce\022\017\n\007user_id\030\001"
-  " \001(\t\0225\n\021aggregated_status\030\002 \001(\0162\032.presen"
-  "ce.ConnectionStatus\022\'\n\006models\030\003 \003(\0132\027.pr"
-  "esence.PresenceModel*O\n\020ConnectionStatus"
-  "\022\020\n\014UNDETERMINED\020\000\022\r\n\tCONNECTED\020\001\022\010\n\004AWA"
-  "Y\020\002\022\020\n\014DISCONNECTED\020\0032p\n\020PresenceRecorde"
-  "r\022\\\n\014UpdateStatus\022%.presence.UpdateUserC"
-  "onnectionRequest\032#.presence.UpdateUserCo"
-  "nnectionReply\"\0002\211\002\n\021PresenceRetriever\022\177\n"
-  "\034RetrieveUserPresenceByDevice\022-.presence"
-  ".RetrieveUserPresenceByDeviceRequest\032..p"
-  "resence.RetrieveUserPresenceByDeviceResp"
-  "onse\"\000\022s\n\030RetrieveUserPresenceById\022).pre"
-  "sence.RetrieveUserPresenceByIdRequest\032*."
-  "presence.RetrieveUserPresenceByIdResponc"
-  "e\"\000b\006proto3"
+  "\n\016presence.proto\022\010presence\032\037google/proto"
+  "buf/timestamp.proto\"|\n\rPresenceModel\022\017\n\007"
+  "user_id\030\001 \001(\t\022\021\n\tdevice_id\030\002 \001(\t\022*\n\006stat"
+  "us\030\003 \001(\0162\032.presence.ConnectionStatus\022\033\n\023"
+  "last_seen_timestamp\030\004 \001(\003\"\212\001\n\033UpdateUser"
+  "ConnectionRequest\022\021\n\tdevice_id\030\001 \001(\t\022\017\n\007"
+  "user_id\030\002 \001(\t\022*\n\006status\030\003 \001(\0162\032.presence"
+  ".ConnectionStatus\022\033\n\023last_seen_timestamp"
+  "\030\004 \001(\003\"G\n\031UpdateUserConnectionReply\022*\n\006s"
+  "tatus\030\001 \001(\0162\032.presence.ConnectionStatus\""
+  "I\n#RetrieveUserPresenceByDeviceRequest\022\017"
+  "\n\007user_id\030\001 \001(\t\022\021\n\tdevice_id\030\002 \001(\t\"N\n$Re"
+  "trieveUserPresenceByDeviceResponse\022&\n\005mo"
+  "del\030\001 \001(\0132\027.presence.PresenceModel\"2\n\037Re"
+  "trieveUserPresenceByIdRequest\022\017\n\007user_id"
+  "\030\001 \001(\t\"\223\001\n RetrieveUserPresenceByIdRespo"
+  "nce\022\017\n\007user_id\030\001 \001(\t\0225\n\021aggregated_statu"
+  "s\030\002 \001(\0162\032.presence.ConnectionStatus\022\'\n\006m"
+  "odels\030\003 \003(\0132\027.presence.PresenceModel*O\n\020"
+  "ConnectionStatus\022\020\n\014UNDETERMINED\020\000\022\r\n\tCO"
+  "NNECTED\020\001\022\010\n\004AWAY\020\002\022\020\n\014DISCONNECTED\020\0032p\n"
+  "\020PresenceRecorder\022\\\n\014UpdateStatus\022%.pres"
+  "ence.UpdateUserConnectionRequest\032#.prese"
+  "nce.UpdateUserConnectionReply\"\0002\211\002\n\021Pres"
+  "enceRetriever\022\177\n\034RetrieveUserPresenceByD"
+  "evice\022-.presence.RetrieveUserPresenceByD"
+  "eviceRequest\032..presence.RetrieveUserPres"
+  "enceByDeviceResponse\"\000\022s\n\030RetrieveUserPr"
+  "esenceById\022).presence.RetrieveUserPresen"
+  "ceByIdRequest\032*.presence.RetrieveUserPre"
+  "senceByIdResponce\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_presence_2eproto_deps[1] = {
+  &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_presence_2eproto_sccs[7] = {
   &scc_info_PresenceModel_presence_2eproto.base,
@@ -269,8 +269,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pre
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_presence_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_presence_2eproto = {
-  false, false, descriptor_table_protodef_presence_2eproto, "presence.proto", 1211,
-  &descriptor_table_presence_2eproto_once, descriptor_table_presence_2eproto_sccs, descriptor_table_presence_2eproto_deps, 7, 0,
+  false, false, descriptor_table_protodef_presence_2eproto, "presence.proto", 1227,
+  &descriptor_table_presence_2eproto_once, descriptor_table_presence_2eproto_sccs, descriptor_table_presence_2eproto_deps, 7, 1,
   schemas, file_default_instances, TableStruct_presence_2eproto::offsets,
   file_level_metadata_presence_2eproto, 7, file_level_enum_descriptors_presence_2eproto, file_level_service_descriptors_presence_2eproto,
 };
@@ -930,18 +930,11 @@ UpdateUserConnectionReply::UpdateUserConnectionReply(::PROTOBUF_NAMESPACE_ID::Ar
 UpdateUserConnectionReply::UpdateUserConnectionReply(const UpdateUserConnectionReply& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_user_id().empty()) {
-    user_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_user_id(),
-      GetArena());
-  }
   status_ = from.status_;
   // @@protoc_insertion_point(copy_constructor:presence.UpdateUserConnectionReply)
 }
 
 void UpdateUserConnectionReply::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UpdateUserConnectionReply_presence_2eproto.base);
-  user_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   status_ = 0;
 }
 
@@ -953,7 +946,6 @@ UpdateUserConnectionReply::~UpdateUserConnectionReply() {
 
 void UpdateUserConnectionReply::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  user_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void UpdateUserConnectionReply::ArenaDtor(void* object) {
@@ -977,7 +969,6 @@ void UpdateUserConnectionReply::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  user_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   status_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -990,18 +981,9 @@ const char* UpdateUserConnectionReply::_InternalParse(const char* ptr, ::PROTOBU
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string user_id = 1;
+      // .presence.ConnectionStatus status = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_user_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "presence.UpdateUserConnectionReply.user_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .presence.ConnectionStatus status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::presence::ConnectionStatus>(val));
@@ -1035,21 +1017,11 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string user_id = 1;
-  if (this->user_id().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_user_id().data(), static_cast<int>(this->_internal_user_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "presence.UpdateUserConnectionReply.user_id");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_user_id(), target);
-  }
-
-  // .presence.ConnectionStatus status = 2;
+  // .presence.ConnectionStatus status = 1;
   if (this->status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_status(), target);
+      1, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1068,14 +1040,7 @@ size_t UpdateUserConnectionReply::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string user_id = 1;
-  if (this->user_id().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_user_id());
-  }
-
-  // .presence.ConnectionStatus status = 2;
+  // .presence.ConnectionStatus status = 1;
   if (this->status() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
@@ -1112,9 +1077,6 @@ void UpdateUserConnectionReply::MergeFrom(const UpdateUserConnectionReply& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.user_id().size() > 0) {
-    _internal_set_user_id(from._internal_user_id());
-  }
   if (from.status() != 0) {
     _internal_set_status(from._internal_status());
   }
@@ -1141,7 +1103,6 @@ bool UpdateUserConnectionReply::IsInitialized() const {
 void UpdateUserConnectionReply::InternalSwap(UpdateUserConnectionReply* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  user_id_.Swap(&other->user_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(status_, other->status_);
 }
 
