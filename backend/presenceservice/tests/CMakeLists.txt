@@ -16,7 +16,6 @@ add_executable(presenceservicetest
         presence_recorder_service_tests.cpp
         presence_cache_mock.h)
 
-#include_directories("g")
 target_compile_features(presenceservicetest PRIVATE cxx_std_17)
 
 # Link test executable against gtest & gtest_main
@@ -25,8 +24,6 @@ target_link_libraries(presenceservicetest PUBLIC
         gtest gmock gtest_main gmock_main
         ${_REFLECTION}
         ${_GRPC_GRPCPP}
-        ${_PROTOBUF_LIBPROTOBUF}
-        )
+        ${_PROTOBUF_LIBPROTOBUF})
 
 gtest_discover_tests(presenceservicetest)
-add_test(NAME presenceservicecheck COMMAND presenceservicetest) # Command can be a target

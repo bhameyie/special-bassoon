@@ -7,20 +7,20 @@
 # GTest
 ################################
 #project(googletest-git NONE)
-project(chatservertesting)
+project(chatservertesting C CXX)
+cmake_policy(SET CMP0079 NEW)
 
 ################################
 # Tests
 ################################
 
 include(GoogleTest)# Add test cpp file
-add_executable(testlib testgtest.cpp)
+add_executable(chatservertest testgtest.cpp)
 
-target_compile_features(testlib PRIVATE cxx_std_17)
+target_compile_features(chatservertest PRIVATE cxx_std_17)
 
 # Link test executable against gtest & gtest_main
-target_link_libraries(testlib PRIVATE chatserverlib gtest gtest_main)
-#gtest_add_tests(TARGET testlib TEST_PREFIX old:)
-gtest_discover_tests(testlib)
+target_link_libraries(chatservertest PRIVATE chatserverlib
+        gtest gmock gtest_main gmock_main)
 
-add_test(NAME testlibtest COMMAND testlib) # Command can be a target
+gtest_discover_tests(chatservertest)
