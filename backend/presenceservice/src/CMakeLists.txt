@@ -3,9 +3,7 @@ cmake_minimum_required(VERSION 3.17)
 
 project(presenceservice C CXX)
 
-get_filename_component(PARENT_DIR ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY)
-get_filename_component(PARENT_DIR ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY)
-get_filename_component(hw_proto "../../protos/presence.proto" ABSOLUTE)
+get_filename_component(hw_proto "${PROTODIR}/presence.proto" ABSOLUTE)
 get_filename_component(hw_proto_path "${hw_proto}" PATH)
 
 set(hw_proto_srcs "${CMAKE_CURRENT_SOURCE_DIR}/gen/presence.pb.cc")

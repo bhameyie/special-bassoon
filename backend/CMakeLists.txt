@@ -9,6 +9,8 @@ find_package(Boost REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
 
+get_filename_component(PROTODIR "../protos" ABSOLUTE)
+
 if(NOT MSVC)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 else()
