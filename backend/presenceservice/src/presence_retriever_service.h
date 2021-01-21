@@ -6,8 +6,12 @@
 #include <variant>
 #include "presence_cache.h"
 #include "service_models.h"
+#include "operation_models.h"
 #include "presence.pb.h"
 #include "presence.grpc.pb.h"
+
+using bassoon::common::OperationFailure;
+using bassoon::common::OperationFailureCode;
 
 class PresenceRetrieverService {
  private:

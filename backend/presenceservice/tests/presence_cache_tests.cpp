@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <vector>
 
-long currentTime = GetCurrentTimestamp();
+long currentTime = bassoon::common::GetCurrentTimestamp();
 
 TEST(PresenceCacheShould, HoldNoDataInitially) {
   PresenceCacheImpl sut;

@@ -25,27 +25,22 @@ add_custom_command(
 include_directories("gen")
 
 add_library(presenceservicelib
+        service_models.h
         presence_cache.cpp
-        utils.cpp
         presence_retriever.cpp
         presence_recorder.cpp
         presence_retriever_service.cpp
         presence_retriever_service.h
         presence_recorder_service.cpp
         presence_recorder_service.h
-        service_models.h
         presence_cache.h
-        utils.h
         service_runner.cpp
         ${presence_grpc_hdrs}
         ${presence_proto_hdrs}
         ${presence_proto_srcs}
         ${presence_grpc_srcs})
 
-set_target_properties(presenceservicelib PROPERTIES PUBLIC_HEADER
-        "service_models.h;presence_cache.h;utils.h;${presence_grpc_hdrs};${presence_proto_hdrs}")
-
-target_link_libraries(presenceservicelib PRIVATE Boost::boost
+target_link_libraries(presenceservicelib PRIVATE Boost::boost commonlib
         ${_REFLECTION}
         ${_GRPC_GRPCPP}
         ${_PROTOBUF_LIBPROTOBUF})
@@ -55,7 +50,7 @@ add_executable(presenceservice main.cpp)
 target_compile_features(presenceservice PRIVATE cxx_std_17)
 
 target_link_libraries(presenceservice PRIVATE
-        presenceservicelib
+        presenceservicelib commonlib
         fmt::fmt
         ${_REFLECTION}
         ${_GRPC_GRPCPP}

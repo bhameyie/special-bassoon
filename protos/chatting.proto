@@ -1,45 +1,70 @@
-
 syntax = "proto3";
 
 package chatting;
 import "google/protobuf/timestamp.proto";
 
-message GroupChatInitialization {
-    string group_name=1;
-    repeated string members=2;
+enum MessageDeliveryStatus{
+  UNDELIVERED = 0;
+  SENT = 1;
+  DELIVERED = 2;
+  READ = 3;
 }
 
-message ChatMessageRequest{
-    string device_id=1;
-    //todo: user_id should normally come from the authcontext
-    string user_id = 2;
-    string textual_content=3;
-    string recipient_id=4;
-    string conversation_id=5;
-    
-    GroupChatInitialization group_initialization=6;
+message SendChatMessageRequest{
+  string device_id = 1;
+  //todo: user_id should normally come from the authcontext
+  string user_id = 2;
+  string textual_content = 3;
+  string recipient_id = 4;
+
+  oneof identifier_kind{
+    //could end up pointing to the chatroom id or direct chat space created server-side
+    string conversation_id = 5;
+    string correlation_id = 6;
+  }
 }
 
 message ChatMessageResponse{
-    string conversation_id=1;
+  string conversation_id = 1;
+  string message_id = 2;
+  MessageDeliveryStatus delivery_status = 3;
+  string correlation_id = 4;
 }
 
-message ConnectMeRequest{
-    string device_id=1;
-    //user_id should normally come from the authcontext
-    string user_id = 2;
+message SentMessageAcknowledgment{
+  string conversation_id = 1;
+  string message_id = 2;
+  MessageDeliveryStatus delivery_status = 3;
+}
+
+message ConnectToChannelRequest{
+  string device_id = 1;
+  //user_id should normally come from the authcontext
+  string user_id = 2;
 }
 
 message UserStatusUpdateRequest{
-    string device_id=1;
-    //user_id should normally come from the authcontext
-    string user_id=2;
+  string device_id = 1;
+  //user_id should normally come from the authcontext
+  string user_id = 2;
 }
 
-message ChatRequest{
-    oneof message_kind{
-        ChatMessageRequest chat=1;
-        ConnectMeRequest connect_me=2;
-        UserStatusUpdateRequest status_update=3;
-    }
+message ChatChannelResponse{
+  oneof chat_channel_response_kind{
+    ChatMessageResponse chat_message_response = 1;
+    SentMessageAcknowledgment message_acknowledgment = 2;
+  }
+}
+
+message ChatChannelRequest{
+  oneof chat_channel_request_kind{
+    SendChatMessageRequest chat = 1;
+    ConnectToChannelRequest connect_me = 2;
+    UserStatusUpdateRequest status_update = 3;
+  }
+}
+
+service ChatChannelServer{
+  rpc SendRequest(stream ChatChannelRequest) returns (stream ChatChannelResponse);
+  rpc ForwardChat(SendChatMessageRequest) returns (stream ChatMessageResponse);
 }

@@ -7,6 +7,10 @@
 #include <variant>
 #include "presence.pb.h"
 #include "presence.grpc.pb.h"
+#include "operation_models.h"
+
+using bassoon::common::OperationFailure;
+using bassoon::common::OperationFailureCode;
 
 class PresenceRecorderService
 {

@@ -5,12 +5,16 @@
 #include "presence.grpc.pb.h"
 #include "presence_cache.h"
 #include "presence_recorder_service.h"
+#include "operation_models.h"
 #include "utils.h"
+
 
 using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
+using bassoon::common::OperationFailureCode;
+using bassoon::common::OperationFailure;
 
 using namespace presence;
 using namespace std;
@@ -29,7 +33,7 @@ class PresenceRecorderImpl final : public PresenceRecorder::Service {
     auto result = service_->UpdateStatus(*request);
 
     return std::visit([&response](std::variant<UpdatedPresence,
-                                               OperationFailure> &&x) {
+                                              OperationFailure> &&x) {
 
       if (auto updated = std::get_if<UpdatedPresence>(&x)) {
 

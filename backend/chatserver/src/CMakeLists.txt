@@ -10,7 +10,7 @@ get_filename_component(chatting_proto_path "${chatting_proto}" PATH)
 set(chatting_proto_srcs "${CMAKE_CURRENT_SOURCE_DIR}/gen/chatting.pb.cc")
 set(chatting_proto_hdrs "${CMAKE_CURRENT_SOURCE_DIR}/gen/chatting.pb.h")
 set(chatting_grpc_srcs "${CMAKE_CURRENT_SOURCE_DIR}/gen/chatting.grpc.pb.cc")
-set(chatting_grpc_hdrs "${CMAKE_CURRENT_SOURCE_DIR}/gen/chatting.grpc.pb.h")
+set(chatting_grpc_hdrs "${CMAKE_CURRENT_SOURCE_DIR}/gen/chatting.grpc.pb.h" chat_channel_service.cpp chat_channel_service.h)
 
 add_custom_command(
         PRE_BUILD
@@ -29,9 +29,7 @@ add_library(chatserverlib
         ${chatting_grpc_hdrs}
         ${chatting_proto_hdrs}
         ${chatting_proto_srcs}
-        ${chatting_grpc_srcs})
-
-target_include_directories(chatserverlib PUBLIC ../include)
+        ${chatting_grpc_srcs} service_runner.cpp service_runner.h configuration_models.h chat_channel_server.cpp chat_channel_service.cpp chat_channel_service.h)
 
 target_link_libraries(chatserverlib PRIVATE Boost::boost
         ${_REFLECTION}

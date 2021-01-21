@@ -1,0 +1,12 @@
+//
+// Created by Boguste Hameyie on 1/20/21.
+//
+
+#ifndef BACKEND_CHATSERVER_SRC_CHAT_CHANNEL_SERVICE_H_
+#define BACKEND_CHATSERVER_SRC_CHAT_CHANNEL_SERVICE_H_
+
+class ChatChannelService{
+
+};
+
+#endif //BACKEND_CHATSERVER_SRC_CHAT_CHANNEL_SERVICE_H_

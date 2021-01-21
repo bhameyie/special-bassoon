@@ -73,5 +73,6 @@ set(BUILD_GTEST ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 
-add_subdirectory(chatserver)
+add_subdirectory(common)
+#add_subdirectory(chatserver)
 add_subdirectory(presenceservice)

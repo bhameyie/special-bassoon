@@ -1,34 +1,9 @@
-#ifndef __SERVICE_MODELS_H__
-#define __SERVICE_MODELS_H__
+//
+// Created by Boguste Hameyie on 1/20/21.
+//
 
-#include <string>
-#include <utility>
-
-enum struct OperationFailureCode : int {
-  NONE = 0,
-  FATAL_ERROR = 1,
-  FAILED_VALIDATION = 2,
-  ITEM_NOT_FOUND = 3,
-};
-
-class OperationFailure {
- private:
-  std::string error_message_;
-  OperationFailureCode failure_code_;
- public:
-  OperationFailure(std::string error_message, OperationFailureCode failure_code) {
-    error_message_ = std::move(error_message);
-    failure_code_ = failure_code;
-  }
-
-  [[nodiscard]] std::string ErrorMessage() const {
-    return error_message_;
-  }
-
-  [[nodiscard]] OperationFailureCode FailureCode() const {
-    return failure_code_;
-  }
-};
+#ifndef BACKEND_PRESENCESERVICE_SRC_SERVICE_MODELS_H_
+#define BACKEND_PRESENCESERVICE_SRC_SERVICE_MODELS_H_
 
 struct UpdatedPresence {
   std::string user_id;
@@ -61,4 +36,4 @@ struct PresenceUpdate {
   }
 };
 
-#endif // __SERVICE_MODELS_H__
+#endif //BACKEND_PRESENCESERVICE_SRC_SERVICE_MODELS_H_

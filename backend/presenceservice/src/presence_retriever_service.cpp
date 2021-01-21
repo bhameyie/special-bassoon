@@ -5,6 +5,9 @@
 #include "service_models.h"
 #include "presence.pb.h"
 #include "presence_retriever_service.h"
+#include "operation_models.h"
+
+using bassoon::common::OperationFailure;
 
 using namespace presence;
 

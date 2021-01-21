@@ -20,6 +20,7 @@ target_compile_features(presenceservicetest PRIVATE cxx_std_17)
 
 # Link test executable against gtest & gtest_main
 target_link_libraries(presenceservicetest PUBLIC
+        commonlib
         presenceservicelib
         gtest gmock gtest_main gmock_main
         ${_REFLECTION}

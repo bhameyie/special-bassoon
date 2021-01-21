@@ -15,7 +15,7 @@ class PresenceCacheImpl : public PresenceCache {
 
   static bool ShouldEvict(const long &timestamp) {
     int threshold = 5 * 60 * 1000; //5 minutes
-    return timestamp < GetCurrentTimestamp() - threshold;
+    return timestamp < bassoon::common::GetCurrentTimestamp() - threshold;
   }
 
  public:

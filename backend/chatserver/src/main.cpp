@@ -1,10 +1,15 @@
-#include <iostream>
-#include <fmt/format.h>
+#include "service_runner.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-        
-    fmt::print("Meh: {}\n",  3);
 
-    return 0;
+  //todo: configuration should be read from a file or environment variable
+  auto config = ServiceConfiguration{};
+
+  ServiceRunner runner("0.0.0.0:50051", config);
+
+  auto server = runner.Run();
+
+  server->Wait();
+
+  return 0;
 }

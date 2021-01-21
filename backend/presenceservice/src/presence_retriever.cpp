@@ -4,11 +4,14 @@
 #include "presence.grpc.pb.h"
 #include "presence_retriever_service.h"
 #include "utils.h"
+#include "operation_models.h"
 
 using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
+
+using bassoon::common::OperationFailure;
 
 using namespace presence;
 using namespace std;
