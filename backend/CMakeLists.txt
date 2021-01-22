@@ -74,5 +74,5 @@ FetchContent_MakeAvailable(googletest)
 
 
 add_subdirectory(common)
-#add_subdirectory(chatserver)
+add_subdirectory(chatserver)
 add_subdirectory(presenceservice)

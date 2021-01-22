@@ -20,7 +20,7 @@ add_executable(chatservertest testgtest.cpp)
 target_compile_features(chatservertest PRIVATE cxx_std_17)
 
 # Link test executable against gtest & gtest_main
-target_link_libraries(chatservertest PRIVATE chatserverlib
+target_link_libraries(chatservertest PRIVATE chatserverlib commonlib
         gtest gmock gtest_main gmock_main)
 
 gtest_discover_tests(chatservertest)
